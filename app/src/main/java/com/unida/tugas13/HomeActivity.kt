@@ -34,6 +34,13 @@ class HomeActivity : AppCompatActivity() {
         setContentView(binding.root)
         prefs = getSharedPreferences("prefs", MODE_PRIVATE)
 
+        // Apply saved theme
+        val savedDark = prefs.getBoolean("dark_mode", false)
+        AppCompatDelegate.setDefaultNightMode(
+            if (savedDark) AppCompatDelegate.MODE_NIGHT_YES
+            else AppCompatDelegate.MODE_NIGHT_NO
+        )
+
         setupWindowInsets()
         setupToolbar()
         setupBottomNavigation()
@@ -144,6 +151,5 @@ class HomeActivity : AppCompatActivity() {
         prefs.edit().putString("locale", languageCode).apply()
         val appLocale = LocaleListCompat.forLanguageTags(languageCode)
         AppCompatDelegate.setApplicationLocales(appLocale)
-        recreate()
     }
 }

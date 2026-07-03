@@ -35,7 +35,9 @@ class SettingsActivity : AppCompatActivity() {
         setContentView(binding.root)
         prefs = getSharedPreferences("prefs", MODE_PRIVATE)
 
-        isDarkMode = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES
+        // Apply saved theme
+        val savedDark = prefs.getBoolean("dark_mode", false)
+        isDarkMode = savedDark
 
         setupWindowInsets()
         setupToolbar()
@@ -92,14 +94,17 @@ class SettingsActivity : AppCompatActivity() {
     }
 
     private fun setupThemeToggle() {
+        binding.switchTheme.isChecked = isDarkMode
+        updateThemeUI()
+
         binding.switchTheme.setOnCheckedChangeListener { _, isChecked ->
             isDarkMode = isChecked
+            prefs.edit().putBoolean("dark_mode", isChecked).apply()
             if (isChecked) {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
             } else {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
             }
-            updateThemeUI()
         }
     }
 
@@ -109,7 +114,6 @@ class SettingsActivity : AppCompatActivity() {
         } else {
             getString(R.string.theme_light)
         }
-        binding.switchTheme.isChecked = isDarkMode
     }
 
     private fun setupLanguageSelector() {
@@ -146,7 +150,6 @@ class SettingsActivity : AppCompatActivity() {
         prefs.edit().putString("locale", languageCode).apply()
         val appLocale = LocaleListCompat.forLanguageTags(languageCode)
         AppCompatDelegate.setApplicationLocales(appLocale)
-        recreate()
     }
 
     private fun setupCards() {
