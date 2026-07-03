@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Tugas13 UI Design</string>
+    <string name="app_info">Aplikasi Tugas13 — Demo Material Design</string>
+
+    <string name="profile_name">Jawed</string>
+    <string name="profile_nim">NIM: 452024611047</string>
+    <string name="avatar_description">Avatar profil pengguna</string>
+
+    <string name="form_title">Form Kontak</string>
+    <string name="hint_name">Nama Lengkap</string>
+    <string name="hint_email">Alamat Email</string>
+    <string name="hint_message">Pesan Anda</string>
+    <string name="placeholder_name">Masukkan nama lengkap</string>
+    <string name="placeholder_email">Masukkan alamat email</string>
+    <string name="placeholder_message">Tulis pesan Anda di sini…</string>
+    <string name="btn_submit">Kirim</string>
+
+    <string name="fab_description">Tombol bantuan</string>
+    <string name="fab_help_message">Gunakan form di atas untuk mengirim pesan kontak.</string>
+    <string name="fab_action_dismiss">Tutup</string>
+
+    <string name="nav_home">Beranda</string>
+    <string name="nav_profile">Profil</string>
+    <string name="nav_settings">Pengaturan</string>
+    <string name="nav_home_selected">Beranda dipilih</string>
+    <string name="nav_profile_selected">Profil dipilih</string>
+    <string name="nav_settings_selected">Pengaturan dipilih</string>
+
+    <string name="error_field_required">Field wajib diisi</string>
+    <string name="error_fill_all_fields">Mohon isi semua field yang wajib.</string>
+    <string name="form_submitted_success">Pesan berhasil dikirim!</string>
+
+    <string name="action_info">Info</string>
+</resources>
