@@ -27,23 +27,15 @@
             app:menu="@menu/home_toolbar_menu"
             app:navigationIcon="@null">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical">
-
-                <ImageView
-                    android:id="@+id/ivAvatar"
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
-                    android:contentDescription="@string/cd_user_avatar"
-                    android:src="@drawable/ic_person"
-                    android:background="@drawable/bg_avatar_circle"
-                    android:padding="6dp"
-                    app:tint="?attr/colorOnPrimary" />
-
-            </LinearLayout>
+            <ImageView
+                android:id="@+id/ivAvatar"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:contentDescription="@string/cd_user_avatar"
+                android:src="@drawable/ic_person"
+                android:background="@drawable/bg_avatar_circle"
+                android:padding="6dp"
+                app:tint="?attr/colorOnPrimary" />
 
         </com.google.android.material.appbar.MaterialToolbar>
 
@@ -211,8 +203,7 @@
                     <com.google.android.material.checkbox.MaterialCheckBox
                         android:id="@+id/cbTask1"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:buttonCornerRadius="@dimen/radius_full" />
+                        android:layout_height="wrap_content" />
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -271,8 +262,7 @@
                     <com.google.android.material.checkbox.MaterialCheckBox
                         android:id="@+id/cbTask2"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:buttonCornerRadius="@dimen/radius_full" />
+                        android:layout_height="wrap_content" />
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -335,8 +325,7 @@
                         android:id="@+id/cbTask3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:checked="true"
-                        app:buttonCornerRadius="@dimen/radius_full" />
+                        android:checked="true" />
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -351,7 +340,7 @@
                             android:text="@string/task_newsletter"
                             android:textAppearance="@style/TextAppearance.TaskFlow.BodyMD"
                             android:textColor="?attr/colorOnSurface"
-                            android:textStyle="strikeThrough" />
+                            android:paintFlags="16" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -389,8 +378,7 @@
                     <com.google.android.material.checkbox.MaterialCheckBox
                         android:id="@+id/cbTask4"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:buttonCornerRadius="@dimen/radius_full" />
+                        android:layout_height="wrap_content" />
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -462,19 +450,19 @@
                         android:gravity="bottom"
                         android:paddingHorizontal="@dimen/spacing_lg">
 
-                        <View android:layout_width="0dp" android:layout_weight="1" android:layout_height="25%" android:background="?attr/colorOutlineVariant" android:layout_marginHorizontal="4dp" android:backgroundTint="?attr/colorOutlineVariant" />
+                        <View android:layout_width="0dp" android:layout_weight="1" android:layout_height="30dp" android:background="?attr/colorOutlineVariant" android:layout_marginHorizontal="4dp" />
 
-                        <View android:layout_width="0dp" android:layout_weight="1" android:layout_height="50%" android:background="?attr/colorOutlineVariant" android:layout_marginHorizontal="4dp" android:backgroundTint="?attr/colorOutlineVariant" />
+                        <View android:layout_width="0dp" android:layout_weight="1" android:layout_height="60dp" android:background="?attr/colorOutlineVariant" android:layout_marginHorizontal="4dp" />
 
-                        <View android:layout_width="0dp" android:layout_weight="1" android:layout_height="100%" android:background="?attr/colorPrimary" android:layout_marginHorizontal="4dp" />
+                        <View android:layout_width="0dp" android:layout_weight="1" android:layout_height="100dp" android:background="?attr/colorPrimary" android:layout_marginHorizontal="4dp" />
 
-                        <View android:layout_width="0dp" android:layout_weight="1" android:layout_height="75%" android:background="?attr/colorOutlineVariant" android:layout_marginHorizontal="4dp" android:backgroundTint="?attr/colorOutlineVariant" />
+                        <View android:layout_width="0dp" android:layout_weight="1" android:layout_height="80dp" android:background="?attr/colorOutlineVariant" android:layout_marginHorizontal="4dp" />
 
-                        <View android:layout_width="0dp" android:layout_weight="1" android:layout_height="50%" android:background="?attr/colorOutlineVariant" android:layout_marginHorizontal="4dp" android:backgroundTint="?attr/colorOutlineVariant" />
+                        <View android:layout_width="0dp" android:layout_weight="1" android:layout_height="50dp" android:background="?attr/colorOutlineVariant" android:layout_marginHorizontal="4dp" />
 
-                        <View android:layout_width="0dp" android:layout_weight="1" android:layout_height="25%" android:background="?attr/colorOutlineVariant" android:layout_marginHorizontal="4dp" android:backgroundTint="?attr/colorOutlineVariant" />
+                        <View android:layout_width="0dp" android:layout_weight="1" android:layout_height="30dp" android:background="?attr/colorOutlineVariant" android:layout_marginHorizontal="4dp" />
 
-                        <View android:layout_width="0dp" android:layout_weight="1" android:layout_height="75%" android:background="?attr/colorOutlineVariant" android:layout_marginHorizontal="4dp" android:backgroundTint="?attr/colorOutlineVariant" />
+                        <View android:layout_width="0dp" android:layout_weight="1" android:layout_height="90dp" android:background="?attr/colorOutlineVariant" android:layout_marginHorizontal="4dp" />
 
                     </LinearLayout>
 
