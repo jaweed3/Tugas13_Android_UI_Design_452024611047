@@ -335,12 +335,12 @@
                         android:layout_marginStart="@dimen/spacing_sm">
 
                         <TextView
+                            android:id="@+id/tvTaskNewsletter"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/task_newsletter"
                             android:textAppearance="@style/TextAppearance.TaskFlow.BodyMD"
-                            android:textColor="?attr/colorOnSurface"
-                            android:paintFlags="16" />
+                            android:textColor="?attr/colorOnSurface" />
 
                         <TextView
                             android:layout_width="wrap_content"
