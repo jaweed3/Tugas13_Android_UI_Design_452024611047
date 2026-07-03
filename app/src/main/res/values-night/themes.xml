@@ -47,7 +47,6 @@
         <item name="colorSurfaceContainerHighest">@color/surface_container_highest</item>
         <item name="colorSurfaceDim">@color/surface_dim</item>
         <item name="colorSurfaceBright">@color/surface_bright</item>
-        <item name="colorSurfaceTint">@color/surface_tint</item>
 
         <item name="colorOutline">@color/outline</item>
         <item name="colorOutlineVariant">@color/outline_variant</item>
