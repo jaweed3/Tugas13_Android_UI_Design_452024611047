@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TaskFlow"
+        android:localeConfig="@xml/locales_config"
         tools:targetApi="35">
 
         <activity
