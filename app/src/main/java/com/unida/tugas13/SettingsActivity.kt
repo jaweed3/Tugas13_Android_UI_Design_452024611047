@@ -1,8 +1,6 @@
 package com.unida.tugas13
 
-import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
@@ -15,29 +13,11 @@ import com.unida.tugas13.databinding.ActivitySettingsBinding
 class SettingsActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySettingsBinding
-    private lateinit var prefs: SharedPreferences
-    private var isDarkMode = false
-
-    override fun attachBaseContext(newBase: Context) {
-        val localeCode = newBase.getSharedPreferences("prefs", MODE_PRIVATE)
-            .getString("locale", "en") ?: "en"
-        val config = newBase.resources.configuration
-        val locale = java.util.Locale(localeCode)
-        java.util.Locale.setDefault(locale)
-        config.setLocales(android.os.LocaleList(locale))
-        val updatedContext = newBase.createConfigurationContext(config)
-        super.attachBaseContext(updatedContext)
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySettingsBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        prefs = getSharedPreferences("prefs", MODE_PRIVATE)
-
-        // Apply saved theme
-        val savedDark = prefs.getBoolean("dark_mode", false)
-        isDarkMode = savedDark
 
         setupWindowInsets()
         setupToolbar()
@@ -46,7 +26,6 @@ class SettingsActivity : AppCompatActivity() {
         setupLanguageSelector()
         setupCards()
         setupLogout()
-        updateThemeUI()
     }
 
     private fun setupWindowInsets() {
@@ -94,12 +73,12 @@ class SettingsActivity : AppCompatActivity() {
     }
 
     private fun setupThemeToggle() {
+        val isDarkMode = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES
         binding.switchTheme.isChecked = isDarkMode
-        updateThemeUI()
+        updateThemeUI(isDarkMode)
 
         binding.switchTheme.setOnCheckedChangeListener { _, isChecked ->
-            isDarkMode = isChecked
-            prefs.edit().putBoolean("dark_mode", isChecked).apply()
+            updateThemeUI(isChecked)
             if (isChecked) {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
             } else {
@@ -108,7 +87,7 @@ class SettingsActivity : AppCompatActivity() {
         }
     }
 
-    private fun updateThemeUI() {
+    private fun updateThemeUI(isDarkMode: Boolean) {
         binding.tvThemeValue.text = if (isDarkMode) {
             getString(R.string.theme_dark)
         } else {
@@ -125,8 +104,13 @@ class SettingsActivity : AppCompatActivity() {
     }
 
     private fun updateLanguageUI() {
-        val currentLocale = resources.configuration.locales[0]
-        binding.tvLanguageValue.text = if (currentLocale.language == "id") {
+        val currentLocale = AppCompatDelegate.getApplicationLocales()
+        val langCode = if (currentLocale.isEmpty) {
+            java.util.Locale.getDefault().language
+        } else {
+            currentLocale[0]?.language ?: "en"
+        }
+        binding.tvLanguageValue.text = if (langCode == "id") {
             "Bahasa Indonesia"
         } else {
             "English"
@@ -141,15 +125,10 @@ class SettingsActivity : AppCompatActivity() {
             .setTitle(R.string.language_setting)
             .setItems(languages) { _, which ->
                 val localeCode = languageCodes[which]
-                setLocale(localeCode)
+                val appLocale = LocaleListCompat.forLanguageTags(localeCode)
+                AppCompatDelegate.setApplicationLocales(appLocale)
             }
             .show()
-    }
-
-    private fun setLocale(languageCode: String) {
-        prefs.edit().putString("locale", languageCode).apply()
-        val appLocale = LocaleListCompat.forLanguageTags(languageCode)
-        AppCompatDelegate.setApplicationLocales(appLocale)
     }
 
     private fun setupCards() {
