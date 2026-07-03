@@ -1,0 +1,177 @@
+<!DOCTYPE html><html dir="ltr" lang="id" style=""><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;600&amp;family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">try{
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "tertiary-container": "#c84000",
+                "outline": "#737687",
+                "outline-variant": "#c3c6d8",
+                "surface-variant": "#e2e2e2",
+                "error": "#ba1a1a",
+                "surface-container-low": "#f3f3f3",
+                "inverse-primary": "#b4c5ff",
+                "surface-container": "#eeeeee",
+                "surface-container-highest": "#e2e2e2",
+                "on-tertiary-fixed": "#390c00",
+                "secondary-fixed-dim": "#c7c5cf",
+                "on-secondary-container": "#62626a",
+                "on-surface-variant": "#424656",
+                "secondary-fixed": "#e4e1eb",
+                "on-primary-fixed": "#00174c",
+                "on-primary-container": "#f3f3ff",
+                "error-container": "#ffdad6",
+                "inverse-surface": "#2f3131",
+                "on-primary": "#ffffff",
+                "on-secondary": "#ffffff",
+                "inverse-on-surface": "#f1f1f1",
+                "surface-container-lowest": "#ffffff",
+                "on-background": "#1a1c1c",
+                "tertiary": "#9e3100",
+                "on-tertiary-fixed-variant": "#832700",
+                "primary-fixed": "#dbe1ff",
+                "on-tertiary-container": "#fff1ed",
+                "on-secondary-fixed-variant": "#46464e",
+                "on-error": "#ffffff",
+                "surface-container-high": "#e8e8e8",
+                "on-primary-fixed-variant": "#003da9",
+                "surface-bright": "#f9f9f9",
+                "tertiary-fixed": "#ffdbd0",
+                "primary-container": "#0f62fe",
+                "surface-tint": "#0052dd",
+                "tertiary-fixed-dim": "#ffb59d",
+                "surface-dim": "#dadada",
+                "secondary-container": "#e1dee9",
+                "secondary": "#5e5d66",
+                "primary": "#004ccd",
+                "on-tertiary": "#ffffff",
+                "background": "#f9f9f9",
+                "on-surface": "#1a1c1c",
+                "surface": "#f9f9f9",
+                "primary-fixed-dim": "#b4c5ff",
+                "on-secondary-fixed": "#1b1b22",
+                "on-error-container": "#93000a"
+            },
+            "borderRadius": {
+                "DEFAULT": "1rem",
+                "lg": "2rem",
+                "xl": "3rem",
+                "full": "9999px"
+            },
+            "fontFamily": {
+                "headline-md": ["Hanken Grotesk"],
+                "body-md": ["IBM Plex Sans"],
+                "body-sm": ["IBM Plex Sans"],
+                "label-sm": ["IBM Plex Sans"],
+                "body-lg": ["IBM Plex Sans"],
+                "headline-lg": ["Hanken Grotesk"],
+                "headline-xl": ["Hanken Grotesk"],
+                "headline-lg-mobile": ["Hanken Grotesk"],
+                "label-md": ["IBM Plex Sans"]
+            }
+          },
+        },
+      }
+    }catch(_e){}</script></head><body class="min-h-screen flex flex-col">
+    <!-- TopAppBar -->
+    <header class="w-full top-0 sticky bg-surface flex items-center justify-between px-4 h-16 border-b border-outline-variant z-50">
+        <div class="flex items-center gap-4">
+            <button aria-label="Kembali" class="p-2 hover:bg-surface-container-low rounded-full transition-colors active:opacity-80">
+                <span class="material-symbols-outlined text-on-surface" data-icon="arrow_back" data-original-icon="arrow_back">arrow_back</span>
+            </button>
+            <h1 class="font-headline-md text-sp-title font-semibold text-on-surface">Tambah Tugas</h1>
+        </div>
+        <div class="flex items-center">
+            <button class="p-2 hover:bg-surface-container-low rounded-full transition-colors">
+                <span class="material-symbols-outlined text-primary" data-icon="language">language</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="flex-1 max-w-2xl mx-auto w-full p-4 md:p-8 space-y-8">
+        <!-- Animated Visual Anchor -->
+        <div class="relative w-full h-48 rounded-lg overflow-hidden bg-primary group">
+            <div class="absolute inset-0 flex flex-col justify-center p-8 bg-gradient-to-t from-primary/20 to-transparent">
+                <div class="flex items-center gap-3 mb-2">
+                    <span class="material-symbols-outlined text-on-primary text-3xl" data-icon="trending_up">trending_up</span>
+                    <h2 class="text-sp-title font-bold text-on-primary font-headline-md">Produktivitas Baru</h2>
+                </div>
+                <p class="text-sp-body text-on-primary opacity-80 max-w-xs">Kelola alur kerja Anda dengan presisi sistematis.</p>
+            </div>
+        </div>
+
+        <!-- Task Form -->
+        <div class="space-y-6">
+            <!-- Jud-->
+            <div class="text-input-layout group">
+                <input class="text-input-field text-sp-body" id="task_title" placeholder=" " required="" type="text">
+                <label class="text-input-label text-sp-body" for="task_title">Judul Tugas</label>
+            </div>
+
+            <!-- Deskripsi (Description) TextInputLayout -->
+            <div class="text-input-layout group">
+                <textarea class="text-input-field text-sp-body resize-none" id="task_desc" placeholder=" " rows="3"></textarea>
+                <label class="text-input-label text-sp-body" for="task_desc">Deskripsi</label>
+            </div>
+
+            <!-- Date Picker Trigger Component -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <button class="flex items-center justify-between bg-surface-container-low px-6 py-4 border-b border-outline hover:bg-surface-container-high transition-colors active:scale-[0.98] rounded-full" id="date_picker_btn">
+                    <div class="flex flex-col items-start">
+                        <span class="text-sp-label text-on-surface-variant">Tenggat Waktu</span>
+                        <span class="text-sp-body font-semibold" id="selected_date">Pilih Tanggal</span>
+                    </div>
+                    <span class="material-symbols-outlined text-primary" data-icon="calendar_today">calendar_today</span>
+                </button>
+                <div class="flex items-center justify-between bg-surface-container-low px-6 py-4 border-b border-outline rounded-full">
+                    <div class="flex flex-col items-start">
+                        <span class="text-sp-label text-on-surface-variant">Prioritas</span>
+                        <span class="text-sp-body font-semibold">Sedang</span>
+                    </div>
+                    <span class="material-symbols-outlined text-secondary" data-icon="flag">flag</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Illustrative Bento Component for Visual Balance -->
+        <div class="grid grid-cols-3 gap-3 h-32">
+            <div class="col-span-2 bg-primary-container p-4 flex flex-col items-center justify-center gap-1 rounded-lg shadow-sm">
+<span class="material-symbols-outlined text-on-primary-container text-[24px]" data-icon="bolt">bolt</span>
+<div class="flex flex-col items-center">
+<span class="text-sp-label font-bold text-on-primary-container">EFEKTIF</span>
+<span class="text-[10px] leading-tight text-on-primary-container opacity-80">Status Efektivitas</span>
+</div>
+</div>
+            <div class="bg-tertiary-container p-4 flex items-center justify-center rounded-lg shadow-sm">
+<span class="material-symbols-outlined text-on-tertiary-container text-3xl" data-icon="done_all" style="font-variation-settings: 'FILL' 1;">done_all</span>
+</div>
+        </div>
+
+        <!-- Action Button -->
+        <div class="pt-8 flex flex-col gap-3">
+            <button class="w-full bg-primary text-on-primary h-14 flex items-center justify-center gap-2 hover:bg-surface-tint transition-all active:scale-[0.98] shadow-sm rounded-full">
+                <span class="material-symbols-outlined text-[20px]" data-icon="save">save</span>
+                <span class="text-sp-button">SIMPAN</span>
+            </button>
+            <button class="w-full border border-outline text-on-surface h-14 flex items-center justify-center hover:bg-surface-container-low transition-colors rounded-full">
+                <span class="text-sp-button">BATAL</span>
+            </button>
+        </div>
+    </main>
+
+    <script class="">
+        // Simple Interaction logic
+        document.getElementById('date_picker_btn').addEventListener('click', () => {
+            const today = new Date();
+            const formatted = today.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
+            document.getElementById('selected_date').innerText = formatted;
+            
+            // Micro-interaction haptic simulation (visual)
+            const btn = document.getElementById('date_picker_btn');
+            btn.style.borderColor = '#004ccd';
+            setTimeout(() => btn.style.borderColor = '#737687', 600);
+        });
+
+        // Form validation simulation
+        const inputs = document.querySelectorAll('.text-input-field');
+        inputs.forEach(input => {</script></body></html>

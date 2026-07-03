@@ -1,35 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Tugas13 UI Design</string>
-    <string name="app_info">Tugas13 App — Material Design Demo</string>
+    <string name="app_name">TaskFlow</string>
 
-    <string name="profile_name">Jawed</string>
-    <string name="profile_nim">NIM: 452024611047</string>
-    <string name="avatar_description">Profile avatar</string>
-
-    <string name="form_title">Contact Form</string>
-    <string name="hint_name">Full Name</string>
-    <string name="hint_email">Email Address</string>
-    <string name="hint_message">Your Message</string>
-    <string name="placeholder_name">Enter full name</string>
-    <string name="placeholder_email">Enter email address</string>
-    <string name="placeholder_message">Write your message here…</string>
-    <string name="btn_submit">Send</string>
-
-    <string name="fab_description">Help button</string>
-    <string name="fab_help_message">Use the form above to send a contact message.</string>
-    <string name="fab_action_dismiss">Dismiss</string>
-
-    <string name="nav_home">Home</string>
-    <string name="nav_profile">Profile</string>
+    <!-- Navigation -->
+    <string name="nav_tasks">Tasks</string>
+    <string name="nav_calendar">Calendar</string>
     <string name="nav_settings">Settings</string>
-    <string name="nav_home_selected">Home selected</string>
-    <string name="nav_profile_selected">Profile selected</string>
-    <string name="nav_settings_selected">Settings selected</string>
 
-    <string name="error_field_required">Required field</string>
-    <string name="error_fill_all_fields">Please fill in all required fields.</string>
-    <string name="form_submitted_success">Message sent successfully!</string>
+    <!-- Home Screen -->
+    <string name="welcome_subtitle">Focus Mode</string>
+    <string name="welcome_message">You have <b>%d tasks</b> left for today.</string>
+    <string name="btn_view_report">View Report</string>
+    <string name="weekly_velocity">Weekly Velocity</string>
+    <string name="active_tasks">Active Tasks</string>
+    <string name="sort_by_date">Sort By Date</string>
+    <string name="due_today">Due: Today</string>
+    <string name="due_tomorrow">Due: Tomorrow</string>
+    <string name="completed_yesterday">Completed yesterday</string>
+    <string name="high_priority">High Priority</string>
+    <string name="productivity_insights">Productivity Insights</string>
+    <string name="task_review_design">Review Quarterly Design Tokens</string>
+    <string name="task_cicd_roadmap">Prepare Enterprise CI/CD Roadmap</string>
+    <string name="task_newsletter">Draft Weekly Newsletter</string>
+    <string name="task_team_sync">Team Sync: Sprint Review</string>
+    <string name="participants">%d participants</string>
+    <string name="time_format">%s</string>
 
-    <string name="action_info">Info</string>
+    <!-- Settings Screen -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_subtitle">Manage your account and app preferences</string>
+    <string name="account_section">Account</string>
+    <string name="general_section">General</string>
+    <string name="app_section">App</string>
+    <string name="help_section">Help &amp; Info</string>
+
+    <string name="theme_setting">Theme</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
+    <string name="language_setting">Language</string>
+    <string name="notifications_setting">Notifications</string>
+    <string name="notifications_active">Active — Push, Email</string>
+    <string name="about_taskflow">About TaskFlow</string>
+    <string name="version_info">Version %s (Help Center)</string>
+
+    <string name="btn_edit_profile">Edit Profile</string>
+    <string name="btn_logout">Logout</string>
+    <string name="btn_save">Save</string>
+
+    <string name="help_center">Help Center</string>
+    <string name="privacy_policy">Privacy Policy</string>
+
+    <string name="account_name">Budi Santoso</string>
+    <string name="account_email">budi.santoso@taskflow.id</string>
+
+    <!-- Common -->
+    <string name="version_format">TaskFlow v%s</string>
+    <string name="copyright">© 2024 TaskFlow Indonesia</string>
+    <string name="add_task">Add Task</string>
+
+    <!-- Day names -->
+    <string name="day_mon">MON</string>
+    <string name="day_tue">TUE</string>
+    <string name="day_wed">WED</string>
+    <string name="day_thu">THU</string>
+    <string name="day_fri">FRI</string>
+    <string name="day_sat">SAT</string>
+    <string name="day_sun">SUN</string>
+
+    <!-- Content Descriptions -->
+    <string name="cd_user_avatar">User profile picture</string>
+    <string name="cd_language_button">Change language</string>
+    <string name="cd_add_task">Add new task</string>
+    <string name="cd_more_options">More options</string>
+    <string name="cd_edit_button">Edit</string>
 </resources>

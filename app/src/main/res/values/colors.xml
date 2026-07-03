@@ -1,13 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="purple_500">#FF6200EE</color>
+    <!-- Fluid Synthesis - Light Theme Colors -->
+    <color name="surface">#f8f9ff</color>
+    <color name="surface_dim">#cbdbf5</color>
+    <color name="surface_bright">#f8f9ff</color>
+    <color name="surface_container_lowest">#ffffff</color>
+    <color name="surface_container_low">#eff4ff</color>
+    <color name="surface_container">#e5eeff</color>
+    <color name="surface_container_high">#dce9ff</color>
+    <color name="surface_container_highest">#d3e4fe</color>
+    <color name="on_surface">#0b1c30</color>
+    <color name="on_surface_variant">#434655</color>
+    <color name="inverse_surface">#213145</color>
+    <color name="inverse_on_surface">#eaf1ff</color>
+    <color name="outline">#737686</color>
+    <color name="outline_variant">#c3c6d7</color>
+    <color name="surface_tint">#0053db</color>
+    <color name="primary">#004ac6</color>
+    <color name="on_primary">#ffffff</color>
+    <color name="primary_container">#2563eb</color>
+    <color name="on_primary_container">#eeefff</color>
+    <color name="inverse_primary">#b4c5ff</color>
+    <color name="secondary">#712ae2</color>
+    <color name="on_secondary">#ffffff</color>
+    <color name="secondary_container">#8a4cfc</color>
+    <color name="on_secondary_container">#fffbff</color>
+    <color name="tertiary">#ad0033</color>
+    <color name="on_tertiary">#ffffff</color>
+    <color name="tertiary_container">#d22348</color>
+    <color name="on_tertiary_container">#ffecec</color>
+    <color name="error">#ba1a1a</color>
+    <color name="on_error">#ffffff</color>
+    <color name="error_container">#ffdad6</color>
+    <color name="on_error_container">#93000a</color>
+    <color name="background">#f8f9ff</color>
+    <color name="on_background">#0b1c30</color>
+    <color name="primary_fixed">#dbe1ff</color>
+    <color name="primary_fixed_dim">#b4c5ff</color>
+    <color name="on_primary_fixed">#00174b</color>
+    <color name="on_primary_fixed_variant">#003ea8</color>
+    <color name="secondary_fixed">#eaddff</color>
+    <color name="secondary_fixed_dim">#d2bbff</color>
+    <color name="on_secondary_fixed">#25005a</color>
+    <color name="on_secondary_fixed_variant">#5a00c6</color>
+    <color name="tertiary_fixed">#ffdadb</color>
+    <color name="tertiary_fixed_dim">#ffb2b7</color>
+    <color name="on_tertiary_fixed">#40000d</color>
+    <color name="on_tertiary_fixed_variant">#92002a</color>
+
+    <!-- Legacy color aliases -->
     <color name="purple_200">#FFBB86FC</color>
-    <color name="teal_700">#FF018786</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
-    <color name="blue_700">#FF1565C0</color>
-    <color name="blue_600">#FF1E88E5</color>
+    <color name="teal_700">#FF018786</color>
     <color name="blue_200">#FF90CAF9</color>
+    <color name="blue_700">#FF1565C0</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="gray_900">#FF1A1A1A</color>

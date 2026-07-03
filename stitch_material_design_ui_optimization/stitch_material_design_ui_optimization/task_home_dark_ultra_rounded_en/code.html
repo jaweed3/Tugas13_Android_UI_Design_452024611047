@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TaskFlow - Productivity Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@300;400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#c84000",
+                        "outline": "#737687",
+                        "outline-variant": "#c3c6d8",
+                        "surface-variant": "#e2e2e2",
+                        "error": "#ba1a1a",
+                        "surface-container-low": "#f3f3f3",
+                        "inverse-primary": "#b4c5ff",
+                        "surface-container": "#eeeeee",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-tertiary-fixed": "#390c00",
+                        "secondary-fixed-dim": "#c7c5cf",
+                        "on-secondary-container": "#62626a",
+                        "on-surface-variant": "#424656",
+                        "secondary-fixed": "#e4e1eb",
+                        "on-primary-fixed": "#00174c",
+                        "on-primary-container": "#f3f3ff",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#2f3131",
+                        "on-primary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "inverse-on-surface": "#f1f1f1",
+                        "surface-container-lowest": "#ffffff",
+                        "on-background": "#f9f9f9",
+                        "tertiary": "#9e3100",
+                        "on-tertiary-fixed-variant": "#832700",
+                        "primary-fixed": "#dbe1ff",
+                        "on-tertiary-container": "#fff1ed",
+                        "on-secondary-fixed-variant": "#46464e",
+                        "on-error": "#ffffff",
+                        "surface-container-high": "#e8e8e8",
+                        "on-primary-fixed-variant": "#003da9",
+                        "surface-bright": "#f9f9f9",
+                        "tertiary-fixed": "#ffdbd0",
+                        "primary-container": "#0f62fe",
+                        "surface-tint": "#0052dd",
+                        "tertiary-fixed-dim": "#ffb59d",
+                        "surface-dim": "#dadada",
+                        "secondary-container": "#e1dee9",
+                        "secondary": "#5e5d66",
+                        "primary": "#004ccd",
+                        "on-tertiary": "#ffffff",
+                        "background": "#1a1c1c",
+                        "on-surface": "#f9f9f9",
+                        "surface": "#2f3131",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "on-secondary-fixed": "#1b1b22",
+                        "on-error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1.5rem",
+                        "lg": "2.5rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Hanken Grotesk", "sans-serif"],
+                        "body": ["IBM Plex Sans", "sans-serif"],
+                        "label": ["IBM Plex Sans", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'IBM Plex Sans', sans-serif;
+            background-color: #1a1c1c;
+            color: #f9f9f9;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .text-sp-headline { font-size: 24px; line-height: 32px; font-family: 'Hanken Grotesk'; }
+        .text-sp-title { font-size: 18px; line-height: 24px; }
+        .text-sp-body { font-size: 16px; line-height: 24px; }
+        .text-sp-label { font-size: 14px; line-height: 20px; }
+        .safe-area-bottom { padding-bottom: env(safe-area-inset-bottom); }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-50 bg-surface/80 backdrop-blur-md border-b border-white/10 flex items-center justify-between px-4 h-16">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-highest flex-shrink-0 ring-2 ring-primary/20">
+<img alt="Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUIZmgfgrdQrUn3OHke6gDnTW7Xmw2y9kDTURrBCDy95hf5I5X9JuLSZnqEmt9xNymaD6Dzi3BLzT9avk1PNtGSJrKe9tgOzde5EfczIOondXoPosrDG_RCveYlXFmWM_tXPn6UfV4lGjGtXbJVsy7f_bLrU7kcOux9kNY2McH1z2_NMKl8L90h3RhdNSZc3cP07DILEYhLFc4b-BZH5PEpMDK4Z5VEAhdACxU4BdW3_npVjH-dczvOc_Kxh80zjEXSCUazxdjozg"/>
+</div>
+<h1 class="font-headline text-sp-headline font-semibold">TaskFlow</h1>
+</div>
+<button class="w-10 h-10 flex items-center justify-center hover:bg-white/10 transition-colors rounded-full text-primary-fixed-dim">
+<span class="material-symbols-outlined" data-icon="language">language</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 overflow-y-auto px-4 pt-6 pb-32 space-y-8">
+<!-- Welcome Section -->
+<section class="space-y-1">
+<p class="text-sp-label text-secondary uppercase tracking-[0.15em] font-semibold opacity-70">Dashboard</p>
+<h2 class="text-sp-headline font-medium text-on-background">Today's Focus</h2>
+</section>
+<!-- Stats Bento Grid -->
+<section class="grid grid-cols-2 gap-4">
+<div class="bg-surface p-6 flex flex-col justify-between h-36 rounded-lg shadow-sm">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-fixed-dim" data-icon="task_alt">task_alt</span>
+</div>
+<div>
+<div class="text-3xl font-headline font-semibold">12</div>
+<div class="text-sp-label text-secondary-fixed-dim">Completed</div>
+</div>
+</div>
+<div class="bg-surface p-6 flex flex-col justify-between h-36 rounded-lg shadow-sm">
+<div class="w-10 h-10 rounded-full bg-tertiary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary-fixed-dim" data-icon="pending_actions">pending_actions</span>
+</div>
+<div>
+<div class="text-3xl font-headline font-semibold">5</div>
+<div class="text-sp-label text-secondary-fixed-dim">In Progress</div>
+</div>
+</div>
+</section>
+<!-- Task List -->
+<section class="space-y-4">
+<div class="flex justify-between items-center px-1">
+<h3 class="text-sp-title font-headline font-semibold">Priority Tasks</h3>
+<button class="text-primary-fixed-dim text-sp-label font-bold tracking-wider hover:opacity-80">VIEW ALL</button>
+</div>
+<!-- Task Card 1 -->
+<div class="bg-surface p-5 flex gap-5 active:scale-[0.98] transition-all rounded-lg group shadow-sm">
+<div class="flex-shrink-0 w-1.5 bg-primary rounded-full h-12 self-start mt-1"></div>
+<div class="flex-1 space-y-2">
+<div class="flex justify-between items-start gap-2">
+<h4 class="text-sp-body font-semibold text-on-surface">Enterprise Security Audit</h4>
+<span class="text-[10px] px-3 py-1 bg-error/20 text-error-container border border-error/30 rounded-full font-bold">HIGH</span>
+</div>
+<p class="text-sp-label text-secondary-fixed-dim leading-relaxed">Review firewall protocols and update tokens for Q3 migration.</p>
+<div class="flex items-center gap-4 pt-1">
+<div class="flex items-center gap-1.5 text-sp-label text-secondary-fixed-dim/80">
+<span class="material-symbols-outlined text-[16px]" data-icon="schedule">schedule</span>
+<span>10:00 AM</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Task Card 2 -->
+<div class="bg-surface p-5 flex gap-5 active:scale-[0.98] transition-all rounded-lg group shadow-sm">
+<div class="flex-shrink-0 w-1.5 bg-tertiary-fixed-dim rounded-full h-12 self-start mt-1"></div>
+<div class="flex-1 space-y-2">
+<div class="flex justify-between items-start gap-2">
+<h4 class="text-sp-body font-semibold text-on-surface">Design System Update</h4>
+<span class="text-[10px] px-3 py-1 bg-tertiary-container/30 text-tertiary-fixed rounded-full font-bold uppercase tracking-tighter">Fluid Design</span>
+</div>
+<p class="text-sp-label text-secondary-fixed-dim leading-relaxed">Applying Fluid Synthesis design tokens to all core components.</p>
+<div class="flex items-center gap-4 pt-1">
+<div class="flex items-center gap-1.5 text-sp-label text-secondary-fixed-dim/80">
+<span class="material-symbols-outlined text-[16px]" data-icon="schedule">schedule</span>
+<span>02:30 PM</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Task Card 3 (Completed) -->
+<div class="bg-surface/40 p-5 flex gap-5 active:scale-[0.98] transition-all rounded-lg opacity-60">
+<div class="flex-shrink-0 w-1.5 bg-outline rounded-full h-12 self-start mt-1"></div>
+<div class="flex-1 flex justify-between items-center">
+<div class="space-y-1">
+<h4 class="text-sp-body font-medium line-through decoration-on-surface-variant">Morning Standup</h4>
+<p class="text-sp-label text-secondary-fixed-dim">Daily sync with engineering squad.</p>
+</div>
+<span class="material-symbols-outlined text-tertiary-fixed-dim" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+</section>
+<!-- Project Visualization Card -->
+<section class="bg-surface p-6 relative overflow-hidden rounded-lg shadow-md group">
+<div class="relative z-10 space-y-4">
+<h3 class="text-sp-title font-headline font-semibold">Quarterly Progress</h3>
+<div class="h-4 w-full bg-background rounded-full overflow-hidden p-1 shadow-inner">
+<div class="h-full bg-primary rounded-full transition-all duration-1000 ease-out" style="width: 75%"></div>
+</div>
+<div class="flex justify-between text-sp-label">
+<span class="text-primary-fixed-dim font-medium">75% Efficiency Reached</span>
+<span class="text-secondary-fixed-dim">Goal: 90%</span>
+</div>
+</div>
+<div class="absolute -right-8 -bottom-8 opacity-5 group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-[160px]" data-icon="analytics">analytics</span>
+</div>
+</section>
+</main>
+<!-- Floating Action Button (FAB) -->
+<button class="fixed bottom-24 right-6 w-16 h-16 bg-primary-container text-on-primary-container shadow-2xl flex items-center justify-center hover:scale-110 active:scale-90 transition-all z-[60] rounded-full ring-4 ring-background">
+<span class="material-symbols-outlined text-3xl" data-icon="add">add</span>
+</button>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-4 left-4 right-4 z-50 bg-surface/90 backdrop-blur-xl border border-white/5 flex justify-around items-center h-20 px-2 rounded-full shadow-2xl safe-area-bottom">
+<!-- Active Tab -->
+<button class="flex flex-col items-center justify-center gap-1 bg-primary text-on-primary rounded-full px-6 py-2 transition-all active:scale-90 shadow-lg">
+<span class="material-symbols-outlined text-2xl" data-icon="assignment" style="font-variation-settings: 'FILL' 1;">assignment</span>
+<span class="font-label text-[10px] font-bold uppercase tracking-widest">Tasks</span>
+</button>
+<!-- Inactive Tabs -->
+<button class="flex flex-col items-center justify-center gap-1 text-on-surface-variant hover:text-primary transition-all px-4 active:scale-90">
+<span class="material-symbols-outlined text-2xl" data-icon="calendar_today">calendar_today</span>
+<span class="font-label text-[10px] font-bold uppercase tracking-widest opacity-60">Events</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 text-on-surface-variant hover:text-primary transition-all px-4 active:scale-90">
+<span class="material-symbols-outlined text-2xl" data-icon="settings">settings</span>
+<span class="font-label text-[10px] font-bold uppercase tracking-widest opacity-60">Config</span>
+</button>
+</nav>
+<script>
+    document.querySelectorAll('.active\\:scale-\\[0\\.98\\]').forEach(card => {
+        card.addEventListener('touchstart', () => card.style.opacity = '0.9');
+        card.addEventListener('touchend', () => card.style.opacity = '1');
+    });
+</script>
+</body></html>

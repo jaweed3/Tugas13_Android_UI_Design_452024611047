@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TaskFlow - Pengaturan</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed": "#eaddff",
+                    "on-secondary-fixed-variant": "#5a00c6",
+                    "inverse-primary": "#b4c5ff",
+                    "on-tertiary-fixed": "#40000d",
+                    "primary-fixed": "#dbe1ff",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed-dim": "#ffb2b7",
+                    "tertiary": "#ad0033",
+                    "on-primary-container": "#eeefff",
+                    "on-surface-variant": "#434655",
+                    "on-secondary-container": "#fffbff",
+                    "tertiary-fixed": "#ffdadb",
+                    "outline": "#737686",
+                    "surface-bright": "#f8f9ff",
+                    "primary-container": "#2563eb",
+                    "on-secondary-fixed": "#25005a",
+                    "on-primary-fixed": "#00174b",
+                    "error": "#ba1a1a",
+                    "on-surface": "#0b1c30",
+                    "on-background": "#0b1c30",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "on-primary": "#ffffff",
+                    "secondary-container": "#8a4cfc",
+                    "surface-container-highest": "#d3e4fe",
+                    "background": "#f8f9ff",
+                    "surface-container-highest": "#d3e4fe",
+                    "surface-container-low": "#eff4ff",
+                    "surface-dim": "#cbdbf5",
+                    "secondary-fixed-dim": "#d2bbff",
+                    "secondary": "#712ae2",
+                    "on-error-container": "#93000a",
+                    "error-container": "#ffdad6",
+                    "surface-container": "#e5eeff",
+                    "primary": "#004ac6",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed-variant": "#92002a",
+                    "on-error": "#ffffff",
+                    "surface": "#f8f9ff",
+                    "on-secondary": "#ffffff",
+                    "inverse-surface": "#213145",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "inverse-on-surface": "#eaf1ff",
+                    "surface-tint": "#0053db",
+                    "tertiary-container": "#d22348",
+                    "outline-variant": "#c3c6d7",
+                    "on-tertiary-container": "#ffecec",
+                    "surface-container-high": "#dce9ff",
+                    "surface-variant": "#d3e4fe"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "4px",
+                    "container-max": "1280px",
+                    "margin-mobile": "16px",
+                    "margin-desktop": "40px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Manrope"],
+                    "headline-lg-mobile": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "body-lg": ["Manrope"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "label-md": ["Manrope"],
+                    "display-lg": ["Plus Jakarta Sans"],
+                    "body-md": ["Manrope"]
+            },
+            "fontSize": {
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #f8f9ff;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .ultra-pill {
+            border-radius: 3rem;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .custom-toggle {
+            position: relative;
+            display: inline-block;
+            width: 52px;
+            height: 32px;
+        }
+        .custom-toggle input { opacity: 0; width: 0; height: 0; }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: #d3e4fe;
+            transition: .4s;
+            border-radius: 32px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 24px;
+            width: 24px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .slider { background-color: #004ac6; }
+        input:checked + .slider:before { transform: translateX(20px); }
+
+        /* Glassmorphism Navigation */
+        .glass-nav {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top App Bar -->
+<header class="fixed top-0 w-full z-50 rounded-b-xl bg-surface/80 backdrop-blur-xl shadow-sm flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 w-full">
+<div class="flex items-center gap-4">
+<span class="font-display-lg text-[24px] font-bold text-primary">TaskFlow</span>
+</div>
+<div class="flex items-center gap-3">
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container-high transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined">language</span>
+</button>
+<div class="w-10 h-10 rounded-full overflow-hidden bg-primary-container ring-2 ring-surface">
+<img class="w-full h-full object-cover" data-alt="A professional close-up headshot of a modern office worker with a warm, friendly smile. The background is a soft-focus minimalist creative studio with blue and white tones. High-end lighting creates soft shadows and highlights on the subject's face, conveying a sense of approachability and efficiency." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6XkR4KSxaBXED5K_GjHFaK_7-K8XT03mW-4oI2xADhMyR5_Feq56JgfVWk_vrVvsnCH1ba_aLWoyZkYCK7pTuQLGUU-Reo0LcdqwO6K8Yd8dYBbCosHxXgD-Dc5COg3u64cAvBFFbl6MSdeH774LQ9xv_5J6gF8RzyeDut8dQEhhRLd4XZU-iMiIXMeQ7RgXmEOSQYBEBDIiqhK3g3CWHflV1VMTC7ZPodhzz_oCVtCtHLyXEyGVr4oNZFwK0qu80jY1kZrZRNfU"/>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="mb-8">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-2">Pengaturan</h1>
+<p class="text-on-surface-variant font-body-md">Kelola akun dan preferensi aplikasi Anda</p>
+</div>
+<!-- Bento Layout for Settings -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Account Section -->
+<section class="md:col-span-12">
+<div class="bg-surface-container-low p-6 md:p-8 ultra-pill transition-all hover:shadow-md border border-white/40">
+<div class="flex flex-col md:flex-row items-center md:items-start gap-8">
+<div class="relative group">
+<div class="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden ring-4 ring-primary-container shadow-xl">
+<img class="w-full h-full object-cover" data-alt="A professional close-up headshot of a modern office worker with a warm, friendly smile. The background is a soft-focus minimalist creative studio with blue and white tones. High-end lighting creates soft shadows and highlights on the subject's face, conveying a sense of approachability and efficiency." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAY-hpSMXkLmDzWSCtfVJe6fmctUVWVxFg9rSS_SAA_GLl0T5LXyjAyf8IwBHqCCXyuSvd7I23dddDWaywvm6DUP6oipKk9xW6Vw3oWFVodNa-z8_cwU8FBWtuqsd7OOiLwOBO1ddTSVPtXcUP61i0mc8NabLEysdUIyWF_g4TZ6rhTyost10gYodUztSrNSX2MRdmPnVOsppoNleicHlx0XuDhP0wWul_wpMuSrr_tcQE54TJ-B9ucKvFAoNKVrrp1bCQnUTtfqow"/>
+</div>
+<button class="absolute bottom-1 right-1 bg-primary text-on-primary w-10 h-10 rounded-full flex items-center justify-center shadow-lg hover:scale-105 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+</div>
+<div class="flex-grow text-center md:text-left pt-2">
+<h2 class="font-headline-md text-headline-md text-on-surface">Budi Santoso</h2>
+<p class="text-on-surface-variant mb-6 font-body-lg">budi.santoso@example.com</p>
+<div class="flex flex-wrap justify-center md:justify-start gap-3">
+<button class="px-8 py-3 bg-primary text-on-primary rounded-full font-label-md hover:shadow-lg transition-shadow active:scale-95 duration-200">Ubah Profil</button>
+<button class="px-8 py-3 bg-surface-container-highest text-primary border-1.5 border-primary/20 rounded-full font-label-md hover:bg-surface-container-high transition-colors active:scale-95 duration-200">Keluar</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- General Settings -->
+<section class="md:col-span-6 space-y-6">
+<h3 class="px-6 font-label-md text-primary uppercase tracking-widest">Umum</h3>
+<!-- Theme Toggle Card -->
+<div class="bg-surface-container-low p-6 ultra-pill flex items-center justify-between border border-white/40 hover:bg-surface-container transition-colors group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container/30 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">light_mode</span>
+</div>
+<div>
+<p class="font-label-md text-on-surface">Tema</p>
+<p class="text-label-sm text-on-surface-variant">Terang</p>
+</div>
+</div>
+<label class="custom-toggle">
+<input checked="" type="checkbox"/>
+<span class="slider"></span>
+</label>
+</div>
+<!-- Language Card -->
+<div class="bg-surface-container-low p-6 ultra-pill flex items-center justify-between border border-white/40 hover:bg-surface-container transition-colors cursor-pointer group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary-container/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">translate</span>
+</div>
+<div>
+<p class="font-label-md text-on-surface">Bahasa</p>
+<p class="text-label-sm text-on-surface-variant">Indonesia</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:translate-x-1 transition-transform">chevron_right</span>
+</div>
+</section>
+<!-- Notification & About -->
+<section class="md:col-span-6 space-y-6">
+<h3 class="px-6 font-label-md text-primary uppercase tracking-widest">Aplikasi</h3>
+<!-- Notifications Card -->
+<div class="bg-surface-container-low p-6 ultra-pill flex items-center justify-between border border-white/40 hover:bg-surface-container transition-colors cursor-pointer group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-tertiary-fixed flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined">notifications</span>
+</div>
+<div>
+<p class="font-label-md text-on-surface">Notifikasi</p>
+<p class="text-label-sm text-on-surface-variant">Aktif • Push, Email</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:translate-x-1 transition-transform">chevron_right</span>
+</div>
+<!-- About Card -->
+<div class="bg-surface-container-low p-6 ultra-pill flex items-center justify-between border border-white/40 hover:bg-surface-container transition-colors cursor-pointer group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">info</span>
+</div>
+<div>
+<p class="font-label-md text-on-surface">Tentang TaskFlow</p>
+<p class="text-label-sm text-on-surface-variant">Versi 2.4.0 (Pusat Bantuan)</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:translate-x-1 transition-transform">chevron_right</span>
+</div>
+</section>
+</div>
+<!-- Footer Spacer -->
+<div class="mt-12 text-center text-outline text-label-sm">
+            TaskFlow © 2024 • Kebijakan Privasi
+        </div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-8 pt-4 bg-surface/80 backdrop-blur-xl rounded-t-xl shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-highest rounded-full transition-all duration-300 active:scale-90" href="#">
+<span class="material-symbols-outlined">task_alt</span>
+<span class="font-label-md text-label-md mt-1">Tasks</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-highest rounded-full transition-all duration-300 active:scale-90" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="font-label-md text-label-md mt-1">Calendar</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-6 py-2 transition-all duration-300 active:scale-90" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span class="font-label-md text-label-md mt-1">Settings</span>
+</a>
+</nav>
+<script>
+        // Micro-interactions for setting cards
+        document.querySelectorAll('.ultra-pill').forEach(card => {
+            card.addEventListener('mousedown', () => {
+                card.style.transform = 'scale(0.98)';
+            });
+            card.addEventListener('mouseup', () => {
+                card.style.transform = 'scale(1)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'scale(1)';
+            });
+        });
+
+        // Toggle handling
+        const themeToggle = document.querySelector('.custom-toggle input');
+        themeToggle.addEventListener('change', (e) => {
+            const label = e.target.parentElement.previousElementSibling.querySelector('.text-label-sm');
+            label.textContent = e.target.checked ? 'Terang' : 'Gelap';
+            // Logic for switching themes would go here
+        });
+    </script>
+</body></html>

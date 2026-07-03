@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TaskFlow - Beranda</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;family=IBM+Plex+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Using the provided Tailwind configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed": "#e4e1eb",
+                    "on-background": "#f9f9f9", /* Adjusted for dark mode manually as per prompt */
+                    "secondary-fixed-dim": "#c7c5cf",
+                    "surface-container-low": "#1e1e24", /* Dark navy/gray context */
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-fixed-variant": "#46464e",
+                    "on-primary-container": "#f3f3ff",
+                    "secondary": "#5e5d66",
+                    "surface-container-lowest": "#121217",
+                    "outline": "#737687",
+                    "surface": "#121217",
+                    "background": "#121217",
+                    "surface-tint": "#0052dd",
+                    "inverse-on-surface": "#1a1c1c",
+                    "tertiary-fixed": "#ffdbd0",
+                    "surface-container-highest": "#33353f",
+                    "on-tertiary-container": "#fff1ed",
+                    "surface-variant": "#2b2d35",
+                    "on-surface": "#f9f9f9",
+                    "surface-dim": "#0e0e12",
+                    "on-error": "#ffffff",
+                    "inverse-surface": "#f1f1f1",
+                    "primary-fixed": "#dbe1ff",
+                    "outline-variant": "#424656",
+                    "tertiary": "#9e3100",
+                    "error": "#ba1a1a",
+                    "inverse-primary": "#b4c5ff",
+                    "on-secondary-fixed": "#1b1b22",
+                    "on-error-container": "#93000a",
+                    "secondary-container": "#2b2d35",
+                    "primary": "#4c8cff", /* Brightened for dark mode contrast */
+                    "on-secondary-container": "#c7c5cf",
+                    "surface-bright": "#1e1e24",
+                    "error-container": "#ffdad6",
+                    "on-primary": "#ffffff",
+                    "surface-container": "#1a1c1c",
+                    "on-primary-fixed": "#00174c",
+                    "surface-container-high": "#282a32",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "tertiary-fixed-dim": "#ffb59d",
+                    "primary-container": "#0052dd",
+                    "on-primary-fixed-variant": "#003da9",
+                    "on-tertiary-fixed-variant": "#832700",
+                    "tertiary-container": "#c84000",
+                    "on-surface-variant": "#c3c6d8",
+                    "on-tertiary-fixed": "#390c00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "64px",
+                    "md": "24px",
+                    "xs": "4px",
+                    "base": "8px",
+                    "margin-mobile": "16px",
+                    "sm": "12px",
+                    "margin-desktop": "48px",
+                    "gutter": "24px",
+                    "lg": "40px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Hanken Grotesk"],
+                    "headline-md": ["Hanken Grotesk"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "body-sm": ["IBM Plex Sans"],
+                    "body-md": ["IBM Plex Sans"],
+                    "label-md": ["IBM Plex Sans"],
+                    "headline-xl": ["Hanken Grotesk"],
+                    "body-lg": ["IBM Plex Sans"],
+                    "label-sm": ["IBM Plex Sans"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "14px", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #121217;
+            color: #f9f9f9;
+            -webkit-font-smoothing: antialiased;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .progress-ring-circle {
+            transition: stroke-dashoffset 0.35s;
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-on-surface">
+<!-- Top Navigation Anchor -->
+<header class="fixed top-0 w-full z-50 rounded-b-xl bg-surface/80 backdrop-blur-xl shadow-sm flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary/20">
+<img class="w-full h-full object-cover" data-alt="A professional close-up portrait of a young Indonesian man with a friendly expression, set against a soft-focus office background. The lighting is warm and cinematic, following a sophisticated dark mode aesthetic with deep blues and neutral tones to match a premium productivity application's visual style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFHCoS7Shv_OU9TlDVgn8_X9siFls4WhqveUe7OW9U2M4PmmmK2n5qe7K8cmBQB1Y48JJuGc87DuGjPcr15CrzG8XX9suJKVpJmZhmFabh3aIXviRnELRJRveMWl7gtT7qz5jwtjGRErfouAJjplNO-RgK2WE8u0seqiAAH0rVsYdYtln1hHhjaUG6Ixd-KpUwkGQiFZ3-x54MzddjW_YhQD44OL8zWcl0LwWKwEr_HPokX4Y2TW_uQ5mDHOfJV8h_V66CK-nnpVc"/>
+</div>
+<div class="hidden md:block">
+<span class="font-display-lg text-display-lg font-bold text-primary">TaskFlow</span>
+</div>
+</div>
+<h1 class="md:hidden font-display-lg text-display-lg font-bold text-primary">TaskFlow</h1>
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container-high transition-colors active:scale-95">
+<span class="material-symbols-outlined" data-icon="language">language</span>
+</button>
+</header>
+<main class="pt-24 pb-32 px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto">
+<!-- Greeting & Date Section -->
+<section class="flex flex-col md:flex-row gap-gutter mb-lg">
+<div class="flex-1">
+<h2 class="font-headline-xl text-headline-xl mb-2">Halo, Selamat Pagi</h2>
+<p class="text-on-surface-variant font-body-lg">Siap untuk menyelesaikan tugas hari ini?</p>
+</div>
+<div class="w-full md:w-64 bg-primary rounded-lg p-6 flex flex-col justify-between shadow-lg shadow-primary/20 relative overflow-hidden">
+<div class="relative z-10">
+<span class="font-label-md text-on-primary/70 uppercase tracking-widest">HARI INI</span>
+<p class="font-headline-lg text-on-primary mt-2">Selasa, 24 Okt</p>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-20">
+<span class="material-symbols-outlined text-[120px]" data-icon="calendar_today">calendar_today</span>
+</div>
+</div>
+</section>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Progress Circle Card -->
+<div class="md:col-span-4 glass-card rounded-lg p-8 flex flex-col items-center justify-center text-center">
+<h3 class="font-headline-md text-headline-md mb-6 self-start">Progres Hari Ini</h3>
+<div class="relative w-48 h-48 flex items-center justify-center mb-4">
+<svg class="w-full h-full">
+<circle class="text-surface-container-highest stroke-current" cx="96" cy="96" fill="transparent" r="80" stroke-width="12"></circle>
+<circle class="text-primary stroke-current progress-ring-circle" cx="96" cy="96" fill="transparent" r="80" stroke-linecap="round" stroke-width="12" style="stroke-dasharray: 502.65; stroke-dashoffset: 140.74;"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="font-headline-xl text-headline-xl">72%</span>
+<span class="font-label-sm text-on-surface-variant">Selesai</span>
+</div>
+</div>
+<p class="text-body-sm text-on-surface-variant">Tinggal 3 tugas lagi!</p>
+</div>
+<!-- Priority Tasks -->
+<div class="md:col-span-8 glass-card rounded-lg p-8">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline-md text-headline-md">Tugas Prioritas</h3>
+<button class="text-primary font-label-md hover:underline">Lihat Semua</button>
+</div>
+<div class="space-y-4">
+<!-- Task Item 1 -->
+<div class="flex items-center gap-4 p-4 rounded-xl bg-surface-container-low hover:bg-surface-container-high transition-all group cursor-pointer border border-transparent hover:border-primary/20">
+<div class="w-6 h-6 rounded-full border-2 border-primary flex items-center justify-center group-active:scale-90 transition-transform">
+<div class="w-3 h-3 rounded-full bg-primary opacity-0 group-hover:opacity-10"></div>
+</div>
+<div class="flex-1">
+<p class="font-body-md font-semibold">Meeting tim mingguan</p>
+<span class="text-xs px-3 py-1 rounded-full bg-error/10 text-error font-bold uppercase tracking-tighter">PENTING</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="chevron_right">chevron_right</span>
+</div>
+<!-- Task Item 2 -->
+<div class="flex items-center gap-4 p-4 rounded-xl bg-surface-container-low hover:bg-surface-container-high transition-all group cursor-pointer border border-transparent hover:border-primary/20">
+<div class="w-6 h-6 rounded-full border-2 border-primary flex items-center justify-center"></div>
+<div class="flex-1">
+<p class="font-body-md font-semibold">Finalisasi laporan keuangan Q3</p>
+<span class="text-xs px-3 py-1 rounded-full bg-primary-container/20 text-primary font-bold uppercase tracking-tighter">KEUANGAN</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="chevron_right">chevron_right</span>
+</div>
+<!-- Task Item 3 -->
+<div class="flex items-center gap-4 p-4 rounded-xl bg-surface-container-low hover:bg-surface-container-high transition-all group cursor-pointer border border-transparent hover:border-primary/20">
+<div class="w-6 h-6 rounded-full border-2 border-primary flex items-center justify-center"></div>
+<div class="flex-1">
+<p class="font-body-md font-semibold">Beli bahan makanan</p>
+<span class="text-xs px-3 py-1 rounded-full bg-secondary-container/20 text-on-secondary-container font-bold uppercase tracking-tighter">PRIBADI</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Categories -->
+<div class="md:col-span-6 glass-card rounded-lg p-8">
+<h3 class="font-headline-md text-headline-md mb-6">Kategori</h3>
+<div class="grid grid-cols-3 gap-4">
+<div class="bg-surface-container p-4 rounded-xl flex flex-col items-center gap-2 hover:scale-105 transition-transform cursor-pointer">
+<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="work">work</span>
+</div>
+<span class="font-label-md">Pekerjaan</span>
+<span class="font-headline-md">12</span>
+</div>
+<div class="bg-surface-container p-4 rounded-xl flex flex-col items-center gap-2 hover:scale-105 transition-transform cursor-pointer">
+<div class="w-12 h-12 rounded-full bg-tertiary/20 flex items-center justify-center text-tertiary-fixed-dim">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+</div>
+<span class="font-label-md">Rumah</span>
+<span class="font-headline-md">8</span>
+</div>
+<div class="bg-surface-container p-4 rounded-xl flex flex-col items-center gap-2 hover:scale-105 transition-transform cursor-pointer">
+<div class="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center text-secondary-fixed-dim">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</div>
+<span class="font-label-md">Kesehatan</span>
+<span class="font-headline-md">3</span>
+</div>
+</div>
+</div>
+<!-- Activity Feed -->
+<div class="md:col-span-6 glass-card rounded-lg p-8">
+<h3 class="font-headline-md text-headline-md mb-6">Aktivitas Terbaru</h3>
+<div class="space-y-6 relative before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-[2px] before:bg-surface-container-highest">
+<div class="flex gap-4 relative">
+<div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-[14px] text-on-primary" data-icon="check" data-weight="fill">check</span>
+</div>
+<div>
+<p class="text-body-md font-medium">Selesai: Desain UI Landing Page</p>
+<p class="text-label-sm text-on-surface-variant">10 menit yang lalu</p>
+</div>
+</div>
+<div class="flex gap-4 relative">
+<div class="w-6 h-6 rounded-full bg-surface-container-highest flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-[14px] text-primary" data-icon="add">add</span>
+</div>
+<div>
+<p class="text-body-md font-medium">Tugas Baru: Revisi Klien A</p>
+<p class="text-label-sm text-on-surface-variant">1 jam yang lalu</p>
+</div>
+</div>
+<div class="flex gap-4 relative">
+<div class="w-6 h-6 rounded-full bg-surface-container-highest flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant" data-icon="more_horiz">more_horiz</span>
+</div>
+<div>
+<p class="text-body-md font-medium">Menunggu: Persetujuan Atasan</p>
+<p class="text-label-sm text-on-surface-variant">3 jam yang lalu</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- FAB (Contextual) -->
+<button class="fixed right-6 bottom-28 md:right-12 md:bottom-12 w-16 h-16 bg-primary text-on-primary rounded-full shadow-2xl flex items-center justify-center active:scale-90 transition-transform z-40 hover:bg-primary-container">
+<span class="material-symbols-outlined text-[32px]" data-icon="add">add</span>
+</button>
+<!-- Bottom Navigation Shell -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-8 pt-4 bg-surface/80 backdrop-blur-xl rounded-t-xl shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
+<!-- Tasks (Active) -->
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-6 py-2 transition-all duration-300 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="task_alt" data-weight="fill" style="font-variation-settings: 'FILL' 1;">task_alt</span>
+<span class="font-label-md text-label-md mt-1">Tugas</span>
+</a>
+<!-- Calendar (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-highest transition-all duration-300 active:scale-90 rounded-full" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span class="font-label-md text-label-md mt-1">Kalender</span>
+</a>
+<!-- Settings (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-highest transition-all duration-300 active:scale-90 rounded-full" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md mt-1">Pengaturan</span>
+</a>
+</nav>
+<script>
+        // Simple Micro-interaction for cards
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-4px)';
+                card.style.transition = 'transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body></html>

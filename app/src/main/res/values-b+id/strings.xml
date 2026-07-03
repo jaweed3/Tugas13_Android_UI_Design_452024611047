@@ -1,35 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Tugas13 UI Design</string>
-    <string name="app_info">Aplikasi Tugas13 — Demo Material Design</string>
+    <string name="app_name">TaskFlow</string>
 
-    <string name="profile_name">Jawed</string>
-    <string name="profile_nim">NIM: 452024611047</string>
-    <string name="avatar_description">Avatar profil pengguna</string>
-
-    <string name="form_title">Form Kontak</string>
-    <string name="hint_name">Nama Lengkap</string>
-    <string name="hint_email">Alamat Email</string>
-    <string name="hint_message">Pesan Anda</string>
-    <string name="placeholder_name">Masukkan nama lengkap</string>
-    <string name="placeholder_email">Masukkan alamat email</string>
-    <string name="placeholder_message">Tulis pesan Anda di sini…</string>
-    <string name="btn_submit">Kirim</string>
-
-    <string name="fab_description">Tombol bantuan</string>
-    <string name="fab_help_message">Gunakan form di atas untuk mengirim pesan kontak.</string>
-    <string name="fab_action_dismiss">Tutup</string>
-
-    <string name="nav_home">Beranda</string>
-    <string name="nav_profile">Profil</string>
+    <!-- Navigation -->
+    <string name="nav_tasks">Tugas</string>
+    <string name="nav_calendar">Kalender</string>
     <string name="nav_settings">Pengaturan</string>
-    <string name="nav_home_selected">Beranda dipilih</string>
-    <string name="nav_profile_selected">Profil dipilih</string>
-    <string name="nav_settings_selected">Pengaturan dipilih</string>
 
-    <string name="error_field_required">Field wajib diisi</string>
-    <string name="error_fill_all_fields">Mohon isi semua field yang wajib.</string>
-    <string name="form_submitted_success">Pesan berhasil dikirim!</string>
+    <!-- Home Screen -->
+    <string name="welcome_subtitle">Mode Fokus</string>
+    <string name="welcome_message">Anda memiliki <b>%d tugas</b> tersisa hari ini.</string>
+    <string name="btn_view_report">Lihat Laporan</string>
+    <string name="weekly_velocity">Kecepatan Mingguan</string>
+    <string name="active_tasks">Tugas Aktif</string>
+    <string name="sort_by_date">Urutkan Berdasarkan Tanggal</string>
+    <string name="due_today">Tenggat: Hari Ini</string>
+    <string name="due_tomorrow">Tenggat: Besok</string>
+    <string name="completed_yesterday">Selesai kemarin</string>
+    <string name="high_priority">Prioritas Tinggi</string>
+    <string name="task_review_design">Tinjau Token Desain Kuartalan</string>
+    <string name="task_cicd_roadmap">Siapkan Roadmap CI/CD Enterprise</string>
+    <string name="task_newsletter">Buat Newsletter Mingguan</string>
+    <string name="task_team_sync">Sync Tim: Sprint Review</string>
+    <string name="participants">%d peserta</string>
+    <string name="time_format">%s</string>
 
-    <string name="action_info">Info</string>
+    <!-- Settings Screen -->
+    <string name="settings_title">Pengaturan</string>
+    <string name="settings_subtitle">Kelola akun dan preferensi aplikasi Anda</string>
+    <string name="account_section">Akun</string>
+    <string name="general_section">Umum</string>
+    <string name="app_section">Aplikasi</string>
+    <string name="help_section">Bantuan &amp; Info</string>
+
+    <string name="theme_setting">Tema</string>
+    <string name="theme_light">Terang</string>
+    <string name="theme_dark">Gelap</string>
+    <string name="language_setting">Bahasa</string>
+    <string name="notifications_setting">Notifikasi</string>
+    <string name="notifications_active">Aktif — Push, Email</string>
+    <string name="about_taskflow">Tentang TaskFlow</string>
+    <string name="version_info">Versi %s (Pusat Bantuan)</string>
+
+    <string name="btn_edit_profile">Ubah Profil</string>
+    <string name="btn_logout">Keluar</string>
+    <string name="btn_save">Simpan</string>
+
+    <string name="help_center">Pusat Bantuan</string>
+    <string name="privacy_policy">Kebijakan Privasi</string>
+
+    <string name="account_name">Budi Santoso</string>
+    <string name="account_email">budi.santoso@taskflow.id</string>
+
+    <!-- Common -->
+    <string name="version_format">TaskFlow v%s</string>
+    <string name="copyright">© 2024 TaskFlow Indonesia</string>
+    <string name="add_task">Tambah Tugas</string>
+
+    <!-- Day names -->
+    <string name="day_mon">SEN</string>
+    <string name="day_tue">SEL</string>
+    <string name="day_wed">RAB</string>
+    <string name="day_thu">KAM</string>
+    <string name="day_fri">JUM</string>
+    <string name="day_sat">SAB</string>
+    <string name="day_sun">MIN</string>
+
+    <!-- Content Descriptions -->
+    <string name="cd_user_avatar">Foto profil pengguna</string>
+    <string name="cd_language_button">Ganti bahasa</string>
+    <string name="cd_add_task">Tambah tugas baru</string>
+    <string name="cd_more_options">Opsi lainnya</string>
+    <string name="cd_edit_button">Ubah</string>
 </resources>

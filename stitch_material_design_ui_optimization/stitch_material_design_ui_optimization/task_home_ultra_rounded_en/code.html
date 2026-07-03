@@ -1,0 +1,231 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">try{
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#c84000",
+                        "outline": "#737687",
+                        "outline-variant": "#c3c6d8",
+                        "surface-variant": "#e2e2e2",
+                        "error": "#ba1a1a",
+                        "surface-container-low": "#f3f3f3",
+                        "inverse-primary": "#b4c5ff",
+                        "surface-container": "#eeeeee",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-tertiary-fixed": "#390c00",
+                        "secondary-fixed-dim": "#c7c5cf",
+                        "on-secondary-container": "#62626a",
+                        "on-surface-variant": "#424656",
+                        "secondary-fixed": "#e4e1eb",
+                        "on-primary-fixed": "#00174c",
+                        "on-primary-container": "#f3f3ff",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#2f3131",
+                        "on-primary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "inverse-on-surface": "#f1f1f1",
+                        "surface-container-lowest": "#ffffff",
+                        "on-background": "#1a1c1c",
+                        "tertiary": "#9e3100",
+                        "on-tertiary-fixed-variant": "#832700",
+                        "primary-fixed": "#dbe1ff",
+                        "on-tertiary-container": "#fff1ed",
+                        "on-secondary-fixed-variant": "#46464e",
+                        "on-error": "#ffffff",
+                        "surface-container-high": "#e8e8e8",
+                        "on-primary-fixed-variant": "#003da9",
+                        "surface-bright": "#f9f9f9",
+                        "tertiary-fixed": "#ffdbd0",
+                        "primary-container": "#0f62fe",
+                        "surface-tint": "#0052dd",
+                        "tertiary-fixed-dim": "#ffb59d",
+                        "surface-dim": "#dadada",
+                        "secondary-container": "#e1dee9",
+                        "secondary": "#5e5d66",
+                        "primary": "#004ccd",
+                        "on-tertiary": "#ffffff",
+                        "background": "#f9f9f9",
+                        "on-surface": "#1a1c1c",
+                        "surface": "#f9f9f9",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "on-secondary-fixed": "#1b1b22",
+                        "on-error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "display": ["Plus Jakarta Sans"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Plus Jakarta Sans"]
+                    }
+                }
+            }
+        }
+    }catch(_e){}</script></head><body class="bg-background text-on-surface min-h-screen flex flex-col">
+    <!-- TopAppBar -->
+    <header class="bg-surface w-full top-0 sticky z-40 border-b border-outline-variant flex items-center justify-between px-6 h-16 w-full">
+        <div class="flex items-center gap-4">
+            <div class="w-9 h-9 rounded-full overflow-hidden border border-outline-variant">
+                <img class="w-full h-full object-cover" data-alt="A professional headshot of a young business person in a bright office setting. The person wears a modern navy blazer against a minimalist white background. The lighting is soft and even, highlighting a productive and clear professional identity. High-quality corporate photography style with a clean, high-contrast aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRn_Nl1i1aTU1Adytb6vICfgIa_xMeGAPo4SQwmNxJgWK8FceJ_6c0wY9PHZUQJhWrcP3Tpwzu51yHF5dBkqM_nvBMaMvufg4Tlk3uJjhzOONSKg6_k1zJvzX08Tq1eSH3W8nWhFXTB_rYhIdTqUX_MTTZRgkOh-xD42jXS8z-lqvYm9OGHOiOtMkgX_dJ_bIEklIJ7efgYeRXoOSl_IoBBg-itbk0TE6Lsj5WqGI68OpLy2F63ZjamCgwRHFzZmqCYBbV2x29i-4">
+            </div>
+            <h1 class="font-headline text-[20px] font-bold tracking-tight text-on-surface">TaskFlow</h1>
+        </div>
+        <div class="flex items-center">
+            <button class="p-2 hover:bg-surface-container-low transition-colors active:opacity-80 rounded-full">
+                <span class="material-symbols-outlined text-primary">language</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Canvas -->
+    <main class="flex-grow overflow-y-auto pb-32 pt-6 px-4 md:px-8 max-w-4xl mx-auto w-full">
+        <!-- Welcome Hero Section -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+            <div class="md:col-span-2 p-8 bg-primary-container text-on-primary-container flex flex-col justify-between h-56 relative overflow-hidden rounded-lg">
+                <div class="z-10 px-4">
+                    <p class="text-[12px] font-bold tracking-widest uppercase mb-2 opacity-80">Focus Mode</p>
+                    <h2 class="text-[28px] font-medium leading-tight mb-4">You have <span class="font-bold underline decoration-2">4 tasks</span> left for today.</h2>
+                </div>
+                <div class="px-4">
+                    <button class="z-10 w-fit px-8 py-3 bg-primary text-white text-[14px] font-bold hover:brightness-110 transition-all rounded-full shadow-lg shadow-primary/20">
+                        View Report
+                    </button>
+                </div>
+                <div class="absolute -right-4 -bottom-4 opacity-10 rotate-12">
+                    
+                </div>
+            </div>
+            <div class="p-6 bg-surface-container text-on-surface rounded-full flex flex-col items-center justify-center text-center h-56">
+                <div class="text-[40px] font-bold text-primary leading-none">85%</div>
+                <p class="text-[14px] font-medium text-on-surface-variant mt-1">Weekly Velocity</p>
+                <div class="w-2/3 bg-outline-variant h-2 mt-6 rounded-full overflow-hidden">
+                    <div class="bg-primary h-full w-[85%] rounded-full"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Task List Section -->
+        <section class="space-y-4">
+            <div class="flex items-center justify-between px-6 mb-2">
+                <h3 class="text-[12px] font-bold text-on-surface-variant tracking-widest uppercase">Active Tasks</h3>
+                <button class="text-primary text-[14px] font-bold hover:underline">Sort By Date</button>
+            </div>
+
+            <!-- Task Item 1 -->
+            <div class="flex items-center p-5 bg-surface-container-low hover:bg-surface-container transition-colors group cursor-pointer rounded-full border border-transparent hover:border-outline-variant">
+                <div class="relative flex items-center justify-center w-6 h-6 ms-2 me-4">
+                    <input class="w-6 h-6 border-2 border-outline text-primary focus:ring-0 rounded-full cursor-pointer bg-transparent" type="checkbox">
+                </div>
+                <div class="flex-grow">
+                    <h4 class="text-[16px] font-semibold text-on-surface leading-tight">Review Quarterly Design Tokens</h4>
+                    <p class="text-[12px] text-on-surface-variant font-medium flex items-center mt-1">
+                        <span class="material-symbols-outlined text-[14px] me-1">calendar_today</span> Due: Today • <span class="ms-1 text-tertiary font-bold">High Priority</span>
+                    </p>
+                </div>
+                <span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity me-4">more_vert</span>
+            </div>
+
+            <!-- Task Item 2 -->
+            <div class="flex items-center p-5 bg-surface-container-low hover:bg-surface-container transition-colors group cursor-pointer rounded-full border border-transparent hover:border-outline-variant">
+                <div class="relative flex items-center justify-center w-6 h-6 ms-2 me-4">
+                    <input class="w-6 h-6 border-2 border-outline text-primary focus:ring-0 rounded-full cursor-pointer bg-transparent" type="checkbox">
+                </div>
+                <div class="flex-grow">
+                    <h4 class="text-[16px] font-semibold text-on-surface leading-tight">Prepare Enterprise CI/CD Roadmap</h4>
+                    <p class="text-[12px] text-on-surface-variant font-medium flex items-center mt-1">
+                        <span class="material-symbols-outlined text-[14px] me-1">calendar_today</span> Due: Tomorrow
+                    </p>
+                </div>
+                <span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity me-4">more_vert</span>
+            </div>
+
+            <!-- Task Item 3 (Completed Example) -->
+            <div class="flex items-center p-5 bg-surface-container-lowest border border-outline-variant hover:bg-surface-container transition-colors group cursor-pointer opacity-60 rounded-full">
+                <div class="relative flex items-center justify-center w-6 h-6 ms-2 me-4">
+                    <input class="w-6 h-6 border-2 border-outline text-primary focus:ring-0 rounded-full cursor-pointer bg-transparent" type="checkbox" checked="">
+                </div>
+                <div class="flex-grow">
+                    <h4 class="text-[16px] font-semibold text-on-surface leading-tight line-through">Draft Weekly Newsletter</h4>
+                    <p class="text-[12px] text-on-surface-variant font-medium flex items-center mt-1">
+                        <span class="material-symbols-outlined text-[14px] me-1">done_all</span> Completed yesterday
+                    </p>
+                </div>
+                <span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity me-4">more_vert</span>
+            </div>
+
+            <!-- Task Item 4 -->
+            <div class="flex items-center p-5 bg-surface-container-low hover:bg-surface-container transition-colors group cursor-pointer rounded-full border border-transparent hover:border-outline-variant">
+                <div class="relative flex items-center justify-center w-6 h-6 ms-2 me-4">
+                    <input class="w-6 h-6 border-2 border-outline text-primary focus:ring-0 rounded-full cursor-pointer bg-transparent" type="checkbox">
+                </div>
+                <div class="flex-grow">
+                    <h4 class="text-[16px] font-semibold text-on-surface leading-tight">Team Sync: Sprint Review</h4>
+                    <p class="text-[12px] text-on-surface-variant font-medium flex items-center mt-1">
+                        <span class="material-symbols-outlined text-[14px] me-1">group</span> 4 participants • <span class="ms-1 text-primary font-bold">14:00 PM</span>
+                    </p>
+                </div>
+                <span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity me-4">more_vert</span>
+            </div>
+        </section>
+
+        <!-- Decorative Activity Chart -->
+        <section class="mt-12 p-8 bg-surface-container rounded-full">
+            <h3 class="text-[12px] font-bold text-on-surface-variant tracking-widest uppercase mb-8 text-center">Productivity Insights</h3>
+            <div class="flex items-end justify-between h-32 gap-3 px-8">
+                <div class="bg-outline-variant w-full h-1/4 rounded-full"></div>
+                <div class="bg-outline-variant w-full h-2/4 rounded-full"></div>
+                <div class="bg-primary w-full h-full rounded-full shadow-lg shadow-primary/20"></div>
+                <div class="bg-outline-variant w-full h-3/4 rounded-full"></div>
+                <div class="bg-outline-variant w-full h-2/4 rounded-full"></div>
+                <div class="bg-outline-variant w-full h-1/4 rounded-full"></div>
+                <div class="bg-outline-variant w-full h-3/4 rounded-full"></div>
+            </div>
+            <div class="flex justify-between mt-6 px-8 text-[11px] text-on-surface-variant font-bold">
+                <span class="">MON</span>
+                <span class="">TUE</span>
+                <span class="">WED</span>
+                <span class="">THU</span>
+                <span class="">FRI</span>
+                <span class="">SAT</span>
+                <span class="">SUN</span>
+            </div>
+        </section>
+    </main>
+
+    <!-- Floating Action Button -->
+    <button class="fixed bottom-28 right-6 w-16 h-16 bg-primary text-white flex items-center justify-center shadow-2xl shadow-primary/40 hover:scale-105 active:scale-95 transition-all z-50 rounded-full">
+        <span class="material-symbols-outlined text-[32px]">add</span>
+    </button>
+
+    <!-- BottomNavBar -->
+    <nav class="fixed bottom-6 left-6 right-6 z-50 bg-surface-container/95 backdrop-blur-md border border-outline-variant/30 flex justify-around items-center h-20 shadow-2xl rounded-full pb-0">
+        <!-- Tasks Tab (Active) -->
+        <a class="flex flex-col items-center justify-center bg-primary text-white rounded-full h-14 w-28 scale-95 active:scale-90 transition-all shadow-lg shadow-primary/25" href="#">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">assignment</span>
+            <span class="font-label text-[12px] font-bold tracking-tight">Tasks</span>
+        </a>
+        <!-- Calendar Tab -->
+        <a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary h-14 w-14 scale-95 active:scale-90 transition-all rounded-full" href="#">
+            <span class="material-symbols-outlined">calendar_today</span>
+            <span class="font-label text-[10px] font-bold tracking-tight mt-0.5">Calendar</span>
+        </a>
+        <!-- Settings Tab -->
+        <a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary h-14 w-14 scale-95 active:scale-90 transition-all rounded-full" href="#">
+            <span class="material-symbols-outlined">settings</span>
+            <span class="font-label text-[10px] font-bold tracking-tight mt-0.5">Settings</span>
+        </a>
+    </nav>
+
+    <script class="">
+        // Micro-interaction for checkboxes
+        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const taskContainer = this.closest('.flex');
+                const taskTitle = taskContainer.querySelector('h4');
+                if (this.checked) {</script></body></html>

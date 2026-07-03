@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TaskFlow - Pengaturan</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed": "#eaddff",
+                    "on-secondary-fixed-variant": "#5a00c6",
+                    "inverse-primary": "#b4c5ff",
+                    "on-tertiary-fixed": "#40000d",
+                    "primary-fixed": "#dbe1ff",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed-dim": "#ffb2b7",
+                    "tertiary": "#ad0033",
+                    "on-primary-container": "#eeefff",
+                    "on-surface-variant": "#434655",
+                    "on-secondary-container": "#fffbff",
+                    "tertiary-fixed": "#ffdadb",
+                    "outline": "#737686",
+                    "surface-bright": "#f8f9ff",
+                    "primary-container": "#2563eb",
+                    "on-secondary-fixed": "#25005a",
+                    "on-primary-fixed": "#00174b",
+                    "error": "#ba1a1a",
+                    "on-surface": "#0b1c30",
+                    "on-background": "#0b1c30",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "on-primary": "#ffffff",
+                    "secondary-container": "#8a4cfc",
+                    "surface-container-highest": "#d3e4fe",
+                    "background": "#f8f9ff",
+                    "surface-container-low": "#eff4ff",
+                    "surface-dim": "#cbdbf5",
+                    "secondary-fixed-dim": "#d2bbff",
+                    "secondary": "#712ae2",
+                    "on-error-container": "#93000a",
+                    "error-container": "#ffdad6",
+                    "surface-container": "#e5eeff",
+                    "primary": "#004ac6",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed-variant": "#92002a",
+                    "on-error": "#ffffff",
+                    "surface": "#f8f9ff",
+                    "on-secondary": "#ffffff",
+                    "inverse-surface": "#213145",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "inverse-on-surface": "#eaf1ff",
+                    "surface-tint": "#0053db",
+                    "tertiary-container": "#d22348",
+                    "outline-variant": "#c3c6d7",
+                    "on-tertiary-container": "#ffecec",
+                    "surface-container-high": "#dce9ff",
+                    "surface-variant": "#d3e4fe"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "4px",
+                    "container-max": "1280px",
+                    "margin-mobile": "16px",
+                    "margin-desktop": "40px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Manrope"],
+                    "headline-lg-mobile": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "body-lg": ["Manrope"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "label-md": ["Manrope"],
+                    "display-lg": ["Plus Jakarta Sans"],
+                    "body-md": ["Manrope"]
+            },
+            "fontSize": {
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0b1c30; /* Manual override for dark background as requested */
+            color: #f8f9ff;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .glass-panel {
+            background: rgba(33, 49, 69, 0.6);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen font-body-md text-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top AppBar -->
+<header class="fixed top-0 w-full z-50 rounded-b-xl bg-surface/80 dark:bg-inverse-surface/80 backdrop-blur-xl shadow-sm flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4">
+<h1 class="font-display-lg text-headline-md font-bold text-primary dark:text-primary-fixed-dim">TaskFlow</h1>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined p-2 rounded-full hover:bg-surface-container-high dark:hover:bg-inverse-surface transition-colors active:scale-95 text-on-surface-variant dark:text-on-surface" data-icon="language">language</button>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container">
+<img class="w-full h-full object-cover" data-alt="Close-up portrait of a professional modern woman with a warm, confident expression. The lighting is soft and cinematic against a dark, blurred tech office background. The overall aesthetic is clean, minimalist, and high-fidelity, matching a dark mode interface with deep blues and subtle primary color accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZXjwuJnN3dYej1HB8NFg2foWOHZ76srprQZYzYEqWfPmPLkZXAf4cnKJyjjCgnQf7XWmhvzdRdr7vueO2dtV89yPoZLWwelePhVZDOKZdRBTW6X7LYq0UmVCL0z6UJQf385-wnobFZUXwIi__ChTANhb4yFgVyWBiD2bTD04trQktLhAJ7451eTB3XotZxAkEMVXqx6rGJr2vp7kB4MTu0YJMr3jq0a7oqtr5msClvCkqY0Xw1RbuTocOKH7_kexnEbRoBOZW7ZA"/>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="mb-8">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface dark:text-on-surface">Pengaturan</h2>
+<p class="text-on-surface-variant dark:text-outline mt-1 font-body-md">Kelola preferensi akun dan aplikasi Anda.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Account Section -->
+<section class="md:col-span-12">
+<h3 class="font-label-md text-label-md text-primary dark:text-primary-fixed-dim mb-4 px-4">Akun</h3>
+<div class="bg-surface-container-low dark:bg-inverse-surface/40 p-6 rounded-xl flex items-center gap-6 shadow-sm border border-outline/10">
+<div class="relative">
+<img class="w-20 h-20 rounded-full object-cover border-4 border-secondary-container" data-alt="Detailed professional profile picture of a tech enthusiast with short hair, wearing a sleek charcoal hoodie. The background features a subtle bokeh effect of soft purple and blue lights. The image is circular-cropped to match a premium UI design system for a dark mode task management application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDd9h3leJMjUeKB4kymOQ6RINUDsMXKKL-f50JKRCfjWWk0Nthg7By2XddeeC-7ke9MygaXS47cXUJ20FjljNNa2ivfFzZY5dLYC73jCuVaUIxJA3Ic_aYjzBDgJ8NDlom9kYzd1l5ERcF59rXABUExAxqq1TDNMBInzj_4mJDhjCENSDeWgU_woB35ToJxYvSAlPfiLDOTs3rtbPvhLCjMQOfNgZlVrQjS3O7xjWNfUkF6NRGIkmhQry9FXoL7wXHNjFsCPzmqJtE"/>
+<button class="absolute bottom-0 right-0 bg-primary p-1.5 rounded-full text-white shadow-lg active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-sm" data-icon="edit">edit</span>
+</button>
+</div>
+<div class="flex-grow">
+<h4 class="font-headline-md text-headline-md text-on-surface dark:text-on-surface">Budi Santoso</h4>
+<p class="text-on-surface-variant dark:text-outline font-body-md">budi.santoso@taskflow.id</p>
+</div>
+<button class="hidden md:flex items-center gap-2 px-6 py-2 rounded-full border-1.5 border-primary text-primary hover:bg-primary/10 transition-colors font-label-md">
+                        Edit Profil
+                    </button>
+</div>
+</section>
+<!-- General Settings - Bento Grid Style -->
+<div class="md:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+<h3 class="col-span-full font-label-md text-label-md text-primary dark:text-primary-fixed-dim mb-2 mt-4 px-4">Umum</h3>
+<!-- Theme Toggle Card -->
+<div class="bg-surface-container-low dark:bg-inverse-surface/40 p-6 rounded-xl flex items-center justify-between border border-outline/10 group hover:bg-surface-container-high transition-colors cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container/20 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="dark_mode">dark_mode</span>
+</div>
+<div>
+<p class="font-label-md text-on-surface dark:text-on-surface">Tema</p>
+<p class="text-sm text-on-surface-variant dark:text-outline">Gelap (Dark)</p>
+</div>
+</div>
+<div class="w-12 h-6 bg-primary-container rounded-full relative flex items-center px-1">
+<div class="w-4 h-4 bg-white rounded-full translate-x-6 transition-transform"></div>
+</div>
+</div>
+<!-- Language Card -->
+<div class="bg-surface-container-low dark:bg-inverse-surface/40 p-6 rounded-xl flex items-center justify-between border border-outline/10 group hover:bg-surface-container-high transition-colors cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-tertiary-container/20 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined" data-icon="translate">translate</span>
+</div>
+<div>
+<p class="font-label-md text-on-surface dark:text-on-surface">Bahasa</p>
+<p class="text-sm text-on-surface-variant dark:text-outline">Indonesian</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</div>
+<!-- Notifications Card -->
+<div class="col-span-full bg-surface-container-low dark:bg-inverse-surface/40 p-6 rounded-xl flex items-center justify-between border border-outline/10 group hover:bg-surface-container-high transition-colors cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary-container/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</div>
+<div>
+<p class="font-label-md text-on-surface dark:text-on-surface">Notifikasi</p>
+<p class="text-sm text-on-surface-variant dark:text-outline">Push, Email, &amp; Pengingat Tugas</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+<!-- About Section & Support -->
+<div class="md:col-span-4 flex flex-col gap-4">
+<h3 class="font-label-md text-label-md text-primary dark:text-primary-fixed-dim mb-2 mt-4 px-4">Bantuan &amp; Info</h3>
+<div class="bg-surface-container-low dark:bg-inverse-surface/40 p-5 rounded-xl border border-outline/10 space-y-4">
+<div class="flex items-center gap-4 cursor-pointer hover:bg-surface-container-highest/20 p-2 rounded-lg transition-colors">
+<span class="material-symbols-outlined text-outline" data-icon="help">help</span>
+<span class="font-body-md text-on-surface dark:text-on-surface">Pusat Bantuan</span>
+</div>
+<div class="flex items-center gap-4 cursor-pointer hover:bg-surface-container-highest/20 p-2 rounded-lg transition-colors">
+<span class="material-symbols-outlined text-outline" data-icon="info">info</span>
+<span class="font-body-md text-on-surface dark:text-on-surface">Tentang TaskFlow</span>
+</div>
+<div class="flex items-center gap-4 cursor-pointer hover:bg-surface-container-highest/20 p-2 rounded-lg transition-colors">
+<span class="material-symbols-outlined text-outline" data-icon="verified_user">verified_user</span>
+<span class="font-body-md text-on-surface dark:text-on-surface">Kebijakan Privasi</span>
+</div>
+</div>
+<button class="mt-2 w-full p-6 rounded-xl bg-error-container/20 border border-error/20 flex items-center justify-center gap-3 text-error font-label-md active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+                    Keluar Akun
+                </button>
+</div>
+</div>
+<!-- Version Footer -->
+<div class="mt-12 text-center pb-12">
+<p class="text-label-sm text-outline">TaskFlow v2.4.0</p>
+<p class="text-label-sm text-outline/50 mt-1">© 2024 TaskFlow Indonesia</p>
+</div>
+</main>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-8 pt-4 bg-surface/80 dark:bg-inverse-surface/80 backdrop-blur-xl rounded-t-xl shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline p-2 hover:bg-surface-container-highest dark:hover:bg-inverse-surface rounded-full transition-all active:scale-90">
+<span class="material-symbols-outlined" data-icon="task_alt">task_alt</span>
+<span class="font-label-md text-label-md mt-1">Tasks</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline p-2 hover:bg-surface-container-highest dark:hover:bg-inverse-surface rounded-full transition-all active:scale-90">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span class="font-label-md text-label-md mt-1">Calendar</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary rounded-full px-6 py-2 transition-all active:scale-90">
+<span class="material-symbols-outlined" data-icon="settings" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span class="font-label-md text-label-md">Pengaturan</span>
+</button>
+</nav>
+<script>
+        // Simple micro-interaction for theme toggle emulation
+        document.querySelector('.w-12.h-6.bg-primary-container').parentElement.addEventListener('click', function() {
+            const circle = this.querySelector('.w-4.h-4');
+            const isDark = circle.classList.contains('translate-x-6');
+            if(isDark) {
+                circle.classList.remove('translate-x-6');
+                circle.classList.add('translate-x-1');
+            } else {
+                circle.classList.remove('translate-x-1');
+                circle.classList.add('translate-x-6');
+            }
+        });
+
+        // Feedback on card clicks
+        document.querySelectorAll('.rounded-xl').forEach(card => {
+            card.addEventListener('mousedown', () => card.style.transform = 'scale(0.98)');
+            card.addEventListener('mouseup', () => card.style.transform = 'scale(1)');
+            card.addEventListener('mouseleave', () => card.style.transform = 'scale(1)');
+        });
+    </script>
+</body></html>

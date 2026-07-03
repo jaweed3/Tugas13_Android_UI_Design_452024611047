@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinatorLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".HomeActivity">
+
+    <!-- Top App Bar -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        app:liftOnScroll="true">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="@string/app_name"
+            app:titleTextAppearance="@style/TextAppearance.TaskFlow.TitleLG"
+            app:titleCentered="false"
+            app:menu="@menu/home_toolbar_menu"
+            app:navigationIcon="@null">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/ivAvatar"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:contentDescription="@string/cd_user_avatar"
+                    android:src="@drawable/ic_person"
+                    android:background="@drawable/bg_avatar_circle"
+                    android:padding="6dp"
+                    app:tint="?attr/colorOnPrimary" />
+
+            </LinearLayout>
+
+        </com.google.android.material.appbar.MaterialToolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Main Content -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="100dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/spacing_default"
+            android:paddingTop="@dimen/spacing_default">
+
+            <!-- Welcome Hero Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardWelcome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_default"
+                app:cardBackgroundColor="?attr/colorPrimaryContainer"
+                app:cardCornerRadius="@dimen/radius_xl"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_lg">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/welcome_subtitle"
+                        android:textAppearance="@style/TextAppearance.TaskFlow.LabelSM"
+                        android:textColor="?attr/colorOnPrimaryContainer"
+                        android:alpha="0.8" />
+
+                    <TextView
+                        android:id="@+id/tvWelcomeMessage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_xs"
+                        android:textAppearance="@style/TextAppearance.TaskFlow.HeadlineMD"
+                        android:textColor="?attr/colorOnPrimaryContainer"
+                        tools:text="You have 4 tasks left for today." />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnViewReport"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_default"
+                        android:text="@string/btn_view_report"
+                        android:textAppearance="@style/TextAppearance.TaskFlow.LabelMD"
+                        app:cornerRadius="@dimen/radius_full"
+                        style="@style/Widget.TaskFlow.Button.Pill" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Weekly Velocity Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardVelocity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_default"
+                app:cardBackgroundColor="?attr/colorSurfaceContainer"
+                app:cardCornerRadius="@dimen/radius_full"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="@dimen/spacing_lg">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="85%"
+                        android:textAppearance="@style/TextAppearance.TaskFlow.DisplayLG"
+                        android:textColor="?attr/colorPrimary" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/weekly_velocity"
+                        android:textAppearance="@style/TextAppearance.TaskFlow.LabelMD"
+                        android:textColor="?attr/colorOnSurfaceVariant" />
+
+                    <com.google.android.material.progressindicator.LinearProgressIndicator
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_md"
+                        app:trackCornerRadius="@dimen/radius_full"
+                        app:trackThickness="8dp"
+                        app:indicatorColor="?attr/colorPrimary"
+                        app:trackColor="?attr/colorOutlineVariant"
+                        android:progress="85" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Active Tasks Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="@dimen/spacing_default"
+                android:paddingHorizontal="@dimen/spacing_sm">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/active_tasks"
+                    android:textAppearance="@style/TextAppearance.TaskFlow.LabelSM"
+                    android:textColor="?attr/colorOnSurfaceVariant"
+                    android:textAllCaps="true"
+                    android:letterSpacing="0.1" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSortByDate"
+                    style="@style/Widget.Material3.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sort_by_date"
+                    android:textAppearance="@style/TextAppearance.TaskFlow.LabelMD"
+                    android:textColor="?attr/colorPrimary" />
+
+            </LinearLayout>
+
+            <!-- Task Items -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardTask1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_sm"
+                app:cardBackgroundColor="?attr/colorSurfaceContainerLow"
+                app:cardCornerRadius="@dimen/radius_full"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/spacing_default">
+
+                    <com.google.android.material.checkbox.MaterialCheckBox
+                        android:id="@+id/cbTask1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:buttonCornerRadius="@dimen/radius_full" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginStart="@dimen/spacing_sm">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/task_review_design"
+                            android:textAppearance="@style/TextAppearance.TaskFlow.BodyMD"
+                            android:textColor="?attr/colorOnSurface" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/due_today"
+                            android:textAppearance="@style/TextAppearance.TaskFlow.LabelSM"
+                            android:textColor="?attr/colorTertiary"
+                            android:layout_marginTop="2dp" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="@dimen/icon_size_md"
+                        android:layout_height="@dimen/icon_size_md"
+                        android:src="@drawable/ic_more_vert"
+                        android:contentDescription="@string/cd_more_options"
+                        app:tint="?attr/colorOnSurfaceVariant" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardTask2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_sm"
+                app:cardBackgroundColor="?attr/colorSurfaceContainerLow"
+                app:cardCornerRadius="@dimen/radius_full"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/spacing_default">
+
+                    <com.google.android.material.checkbox.MaterialCheckBox
+                        android:id="@+id/cbTask2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:buttonCornerRadius="@dimen/radius_full" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginStart="@dimen/spacing_sm">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/task_cicd_roadmap"
+                            android:textAppearance="@style/TextAppearance.TaskFlow.BodyMD"
+                            android:textColor="?attr/colorOnSurface" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/due_tomorrow"
+                            android:textAppearance="@style/TextAppearance.TaskFlow.LabelSM"
+                            android:textColor="?attr/colorOnSurfaceVariant"
+                            android:layout_marginTop="2dp" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="@dimen/icon_size_md"
+                        android:layout_height="@dimen/icon_size_md"
+                        android:src="@drawable/ic_more_vert"
+                        android:contentDescription="@string/cd_more_options"
+                        app:tint="?attr/colorOnSurfaceVariant" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Completed Task -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardTask3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_sm"
+                app:cardBackgroundColor="?attr/colorSurfaceContainerLowest"
+                app:cardCornerRadius="@dimen/radius_full"
+                app:cardElevation="0dp"
+                app:strokeColor="?attr/colorOutlineVariant"
+                app:strokeWidth="1dp"
+                android:alpha="0.6"
+                android:clickable="true"
+                android:focusable="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/spacing_default">
+
+                    <com.google.android.material.checkbox.MaterialCheckBox
+                        android:id="@+id/cbTask3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        app:buttonCornerRadius="@dimen/radius_full" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginStart="@dimen/spacing_sm">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/task_newsletter"
+                            android:textAppearance="@style/TextAppearance.TaskFlow.BodyMD"
+                            android:textColor="?attr/colorOnSurface"
+                            android:textStyle="strikeThrough" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/completed_yesterday"
+                            android:textAppearance="@style/TextAppearance.TaskFlow.LabelSM"
+                            android:textColor="?attr/colorOnSurfaceVariant"
+                            android:layout_marginTop="2dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardTask4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_default"
+                app:cardBackgroundColor="?attr/colorSurfaceContainerLow"
+                app:cardCornerRadius="@dimen/radius_full"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/spacing_default">
+
+                    <com.google.android.material.checkbox.MaterialCheckBox
+                        android:id="@+id/cbTask4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:buttonCornerRadius="@dimen/radius_full" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginStart="@dimen/spacing_sm">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/task_team_sync"
+                            android:textAppearance="@style/TextAppearance.TaskFlow.BodyMD"
+                            android:textColor="?attr/colorOnSurface" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="@style/TextAppearance.TaskFlow.LabelSM"
+                            android:textColor="?attr/colorPrimary"
+                            android:layout_marginTop="2dp"
+                            tools:text="4 participants • 14:00 PM" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="@dimen/icon_size_md"
+                        android:layout_height="@dimen/icon_size_md"
+                        android:src="@drawable/ic_more_vert"
+                        android:contentDescription="@string/cd_more_options"
+                        app:tint="?attr/colorOnSurfaceVariant" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Productivity Chart Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardChart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_default"
+                app:cardBackgroundColor="?attr/colorSurfaceContainer"
+                app:cardCornerRadius="@dimen/radius_full"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_lg">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/productivity_insights"
+                        android:textAppearance="@style/TextAppearance.TaskFlow.LabelSM"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:textAllCaps="true"
+                        android:letterSpacing="0.1"
+                        android:layout_marginBottom="@dimen/spacing_lg" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:orientation="horizontal"
+                        android:gravity="bottom"
+                        android:paddingHorizontal="@dimen/spacing_lg">
+
+                        <View android:layout_width="0dp" android:layout_weight="1" android:layout_height="25%" android:background="?attr/colorOutlineVariant" android:layout_marginHorizontal="4dp" android:backgroundTint="?attr/colorOutlineVariant" />
+
+                        <View android:layout_width="0dp" android:layout_weight="1" android:layout_height="50%" android:background="?attr/colorOutlineVariant" android:layout_marginHorizontal="4dp" android:backgroundTint="?attr/colorOutlineVariant" />
+
+                        <View android:layout_width="0dp" android:layout_weight="1" android:layout_height="100%" android:background="?attr/colorPrimary" android:layout_marginHorizontal="4dp" />
+
+                        <View android:layout_width="0dp" android:layout_weight="1" android:layout_height="75%" android:background="?attr/colorOutlineVariant" android:layout_marginHorizontal="4dp" android:backgroundTint="?attr/colorOutlineVariant" />
+
+                        <View android:layout_width="0dp" android:layout_weight="1" android:layout_height="50%" android:background="?attr/colorOutlineVariant" android:layout_marginHorizontal="4dp" android:backgroundTint="?attr/colorOutlineVariant" />
+
+                        <View android:layout_width="0dp" android:layout_weight="1" android:layout_height="25%" android:background="?attr/colorOutlineVariant" android:layout_marginHorizontal="4dp" android:backgroundTint="?attr/colorOutlineVariant" />
+
+                        <View android:layout_width="0dp" android:layout_weight="1" android:layout_height="75%" android:background="?attr/colorOutlineVariant" android:layout_marginHorizontal="4dp" android:backgroundTint="?attr/colorOutlineVariant" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:layout_marginTop="@dimen/spacing_default"
+                        android:paddingHorizontal="@dimen/spacing_lg">
+
+                        <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="@string/day_mon" android:textAppearance="@style/TextAppearance.TaskFlow.LabelSM" android:textColor="?attr/colorOnSurfaceVariant" android:gravity="center" />
+                        <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="@string/day_tue" android:textAppearance="@style/TextAppearance.TaskFlow.LabelSM" android:textColor="?attr/colorOnSurfaceVariant" android:gravity="center" />
+                        <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="@string/day_wed" android:textAppearance="@style/TextAppearance.TaskFlow.LabelSM" android:textColor="?attr/colorOnSurfaceVariant" android:gravity="center" />
+                        <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="@string/day_thu" android:textAppearance="@style/TextAppearance.TaskFlow.LabelSM" android:textColor="?attr/colorOnSurfaceVariant" android:gravity="center" />
+                        <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="@string/day_fri" android:textAppearance="@style/TextAppearance.TaskFlow.LabelSM" android:textColor="?attr/colorOnSurfaceVariant" android:gravity="center" />
+                        <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="@string/day_sat" android:textAppearance="@style/TextAppearance.TaskFlow.LabelSM" android:textColor="?attr/colorOnSurfaceVariant" android:gravity="center" />
+                        <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="@string/day_sun" android:textAppearance="@style/TextAppearance.TaskFlow.LabelSM" android:textColor="?attr/colorOnSurfaceVariant" android:gravity="center" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- FAB -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="@dimen/spacing_default"
+        android:layout_marginBottom="100dp"
+        android:contentDescription="@string/cd_add_task"
+        app:srcCompat="@drawable/ic_add"
+        app:fabSize="normal"
+        app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Full" />
+
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginHorizontal="@dimen/spacing_default"
+        android:layout_marginBottom="@dimen/spacing_lg"
+        app:menu="@menu/bottom_nav_menu"
+        app:labelVisibilityMode="labeled"
+        app:itemActiveIndicatorStyle="@style/Widget.TaskFlow.BottomNav.ActiveIndicator"
+        style="@style/Widget.Material3.BottomNavigationView" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
