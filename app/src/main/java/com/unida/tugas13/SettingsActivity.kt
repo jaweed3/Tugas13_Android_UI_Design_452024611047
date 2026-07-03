@@ -20,10 +20,7 @@ class SettingsActivity : AppCompatActivity() {
         binding = ActivitySettingsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        isDarkMode = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES ||
-                (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM &&
-                        resources.configuration.uiMode and android.content.res.Configuration.UI_MODE_NIGHT_MASK ==
-                        android.content.res.Configuration.UI_MODE_NIGHT_YES)
+        isDarkMode = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES
 
         setupWindowInsets()
         setupToolbar()
@@ -59,12 +56,7 @@ class SettingsActivity : AppCompatActivity() {
         binding.bottomNavigation.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_tasks -> {
-                    startActivity(Intent(this, HomeActivity::class.java))
-                    finish()
-                    true
-                }
-                R.id.nav_calendar -> {
-                    Snackbar.make(binding.coordinatorLayout, R.string.nav_calendar, Snackbar.LENGTH_SHORT).show()
+                    navigateToHome()
                     true
                 }
                 R.id.nav_settings -> {
@@ -75,6 +67,13 @@ class SettingsActivity : AppCompatActivity() {
         }
 
         binding.bottomNavigation.selectedItemId = R.id.nav_settings
+    }
+
+    private fun navigateToHome() {
+        val intent = Intent(this, HomeActivity::class.java)
+        startActivity(intent)
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+        finish()
     }
 
     private fun setupThemeToggle() {
@@ -99,15 +98,19 @@ class SettingsActivity : AppCompatActivity() {
     }
 
     private fun setupLanguageSelector() {
+        updateLanguageUI()
+
+        binding.cardLanguage.setOnClickListener {
+            showLanguageDialog()
+        }
+    }
+
+    private fun updateLanguageUI() {
         val currentLocale = resources.configuration.locales[0]
         binding.tvLanguageValue.text = if (currentLocale.language == "id") {
             "Bahasa Indonesia"
         } else {
             "English"
-        }
-
-        binding.cardLanguage.setOnClickListener {
-            showLanguageDialog()
         }
     }
 

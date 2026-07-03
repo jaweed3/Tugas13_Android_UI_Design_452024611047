@@ -35,7 +35,7 @@
                 android:src="@drawable/ic_person"
                 android:background="@drawable/bg_avatar_circle"
                 android:padding="6dp"
-                app:tint="?attr/colorOnPrimary" />
+                app:tint="?attr/colorPrimary" />
 
         </com.google.android.material.appbar.MaterialToolbar>
 

@@ -11,7 +11,6 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.snackbar.Snackbar
 import com.unida.tugas13.databinding.ActivityHomeBinding
-import java.util.Locale
 
 class HomeActivity : AppCompatActivity() {
 
@@ -57,17 +56,19 @@ class HomeActivity : AppCompatActivity() {
                     Snackbar.make(binding.coordinatorLayout, R.string.nav_tasks, Snackbar.LENGTH_SHORT).show()
                     true
                 }
-                R.id.nav_calendar -> {
-                    Snackbar.make(binding.coordinatorLayout, R.string.nav_calendar, Snackbar.LENGTH_SHORT).show()
-                    true
-                }
                 R.id.nav_settings -> {
-                    startActivity(Intent(this, SettingsActivity::class.java))
+                    navigateToSettings()
                     true
                 }
                 else -> false
             }
         }
+    }
+
+    private fun navigateToSettings() {
+        val intent = Intent(this, SettingsActivity::class.java)
+        startActivity(intent)
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
     }
 
     private fun setupWelcomeCard() {

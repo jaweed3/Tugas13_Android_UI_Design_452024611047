@@ -5,10 +5,6 @@
         android:icon="@drawable/ic_task_alt"
         android:title="@string/nav_tasks" />
     <item
-        android:id="@+id/nav_calendar"
-        android:icon="@drawable/ic_calendar"
-        android:title="@string/nav_calendar" />
-    <item
         android:id="@+id/nav_settings"
         android:icon="@drawable/ic_settings"
         android:title="@string/nav_settings"
