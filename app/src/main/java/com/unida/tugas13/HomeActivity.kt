@@ -1,10 +1,9 @@
 package com.unida.tugas13
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.app.AppCompatDelegate
-import androidx.core.os.LocaleListCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.snackbar.Snackbar
@@ -13,6 +12,10 @@ import com.unida.tugas13.databinding.ActivityHomeBinding
 class HomeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomeBinding
+
+    override fun attachBaseContext(newBase: Context) {
+        super.attachBaseContext(LocaleHelper.onAttach(newBase))
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -119,9 +122,8 @@ class HomeActivity : AppCompatActivity() {
         androidx.appcompat.app.AlertDialog.Builder(this)
             .setTitle(R.string.language_setting)
             .setItems(languages) { _, which ->
-                val localeCode = languageCodes[which]
-                val appLocale = LocaleListCompat.forLanguageTags(localeCode)
-                AppCompatDelegate.setApplicationLocales(appLocale)
+                LocaleHelper.setLocale(this, languageCodes[which])
+                recreate()
             }
             .show()
     }

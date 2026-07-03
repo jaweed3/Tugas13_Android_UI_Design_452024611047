@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatDelegate
 class TaskFlowApp : Application() {
     override fun onCreate() {
         super.onCreate()
-        // Default light mode - AppCompatDelegate handles persistence automatically
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
     }
 }
