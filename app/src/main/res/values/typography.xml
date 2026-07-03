@@ -3,13 +3,13 @@
     <!-- Typography - Fluid Synthesis / Organic Enterprise Style -->
     <style name="TextAppearance.TaskFlow.DisplayLG" parent="TextAppearance.Material3.DisplaySmall">
         <item name="android:textSize">48sp</item>
-        <item name="android:letterSpacing">-0.02em</item>
+        <item name="android:letterSpacing">-0.02</item>
         <item name="fontFamily">sans-serif-medium</item>
     </style>
 
     <style name="TextAppearance.TaskFlow.HeadlineLG" parent="TextAppearance.Material3.HeadlineLarge">
         <item name="android:textSize">32sp</item>
-        <item name="android:letterSpacing">-0.01em</item>
+        <item name="android:letterSpacing">-0.01</item>
         <item name="fontFamily">sans-serif-medium</item>
     </style>
 
@@ -25,7 +25,7 @@
 
     <style name="TextAppearance.TaskFlow.TitleMD" parent="TextAppearance.Material3.TitleMedium">
         <item name="android:textSize">18sp</item>
-        <item name="android:letterSpacing">0.15em</item>
+        <item name="android:letterSpacing">0.15</item>
         <item name="fontFamily">sans-serif-medium</item>
     </style>
 
@@ -41,12 +41,12 @@
 
     <style name="TextAppearance.TaskFlow.LabelMD" parent="TextAppearance.Material3.LabelLarge">
         <item name="android:textSize">14sp</item>
-        <item name="android:letterSpacing">0.01em</item>
+        <item name="android:letterSpacing">0.01</item>
         <item name="fontFamily">sans-serif-medium</item>
     </style>
 
     <style name="TextAppearance.TaskFlow.LabelSM" parent="TextAppearance.Material3.LabelMedium">
         <item name="android:textSize">12sp</item>
-        <item name="android:letterSpacing">0.05em</item>
+        <item name="android:letterSpacing">0.05</item>
     </style>
 </resources>
