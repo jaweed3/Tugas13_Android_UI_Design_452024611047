@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dark Mode Surface Colors - overrides values from colors.xml -->
+    <!-- Background and base surfaces - dark blue tones -->
+    <color name="surface">#0b1c30</color>
+    <color name="surface_dim">#0a1525</color>
+    <color name="surface_bright">#0f2439</color>
+    <color name="surface_container_lowest">#060d14</color>
+    <color name="surface_container_low">#0f2439</color>
+    <color name="surface_container">#132743</color>
+    <color name="surface_container_high">#1a3250</color>
+    <color name="surface_container_highest">#21395e</color>
+    <color name="on_surface">#f8f9ff</color>
+    <color name="on_surface_variant">#a8b4c8</color>
+    <color name="inverse_surface">#f8f9ff</color>
+    <color name="inverse_on_surface">#0b1c30</color>
+    <color name="outline">#5c6b7d</color>
+    <color name="outline_variant">#3d4a5c</color>
+
+    <!-- Primary colors for dark mode -->
+    <color name="primary">#4d8aff</color>
+    <color name="on_primary">#002952</color>
+    <color name="primary_container">#003e77</color>
+    <color name="on_primary_container">#d5e2ff</color>
+    <color name="primary_fixed">#d5e2ff</color>
+    <color name="primary_fixed_dim">#a9c1ff</color>
+    <color name="on_primary_fixed">#002952</color>
+    <color name="on_primary_fixed_variant">#1a4488</color>
+
+    <!-- Secondary colors for dark mode -->
+    <color name="secondary">#c6c2dd</color>
+    <color name="on_secondary">#2b2942</color>
+    <color name="secondary_container">#433a5c</color>
+    <color name="on_secondary_container">#e4dfff</color>
+    <color name="secondary_fixed">#e4dfff</color>
+    <color name="secondary_fixed_dim">#c6c2dd</color>
+    <color name="on_secondary_fixed">#2b2942</color>
+    <color name="on_secondary_fixed_variant">#433a5c</color>
+
+    <!-- Tertiary colors for dark mode -->
+    <color name="tertiary">#ffb2b7</color>
+    <color name="on_tertiary">#5c1121</color>
+    <color name="tertiary_container">#7c2937</color>
+    <color name="on_tertiary_container">#ffd9dc</color>
+    <color name="tertiary_fixed">#ffd9dc</color>
+    <color name="tertiary_fixed_dim">#ffb2b7</color>
+    <color name="on_tertiary_fixed">#5c1121</color>
+    <color name="on_tertiary_fixed_variant">#7c2937</color>
+
+    <!-- Background -->
+    <color name="background">#0b1c30</color>
+    <color name="on_background">#f8f9ff</color>
+
+    <!-- Surface variant -->
+    <color name="surface_variant">#1a3250</color>
+    <color name="surface_tint">#4d8aff</color>
+</resources>

@@ -127,7 +127,7 @@
                         android:layout_height="wrap_content"
                         android:text="85%"
                         android:textAppearance="@style/TextAppearance.TaskFlow.DisplayLG"
-                        android:textColor="?attr/colorPrimary" />
+                        android:textColor="?attr/colorOnSurface" />
 
                     <TextView
                         android:layout_width="wrap_content"

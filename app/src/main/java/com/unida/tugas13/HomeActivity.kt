@@ -1,9 +1,7 @@
 package com.unida.tugas13
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.os.LocaleListCompat
@@ -130,5 +128,6 @@ class HomeActivity : AppCompatActivity() {
     private fun setLocale(languageCode: String) {
         val appLocale = LocaleListCompat.forLanguageTags(languageCode)
         AppCompatDelegate.setApplicationLocales(appLocale)
+        recreate()
     }
 }

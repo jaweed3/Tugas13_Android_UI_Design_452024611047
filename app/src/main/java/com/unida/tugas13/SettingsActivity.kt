@@ -130,6 +130,7 @@ class SettingsActivity : AppCompatActivity() {
     private fun setLocale(languageCode: String) {
         val appLocale = LocaleListCompat.forLanguageTags(languageCode)
         AppCompatDelegate.setApplicationLocales(appLocale)
+        recreate()
     }
 
     private fun setupCards() {
