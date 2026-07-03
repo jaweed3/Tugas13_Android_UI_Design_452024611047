@@ -1,45 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="TextAppearance.Tugas13.DisplaySmall" parent="TextAppearance.AppCompat.Display1">
+    <style name="TextAppearance.Tugas13.DisplaySmall" parent="TextAppearance.MaterialComponents.Headline4">
         <item name="android:textSize">36sp</item>
         <item name="android:letterSpacing">0</item>
     </style>
 
-    <style name="TextAppearance.Tugas13.HeadlineSmall" parent="TextAppearance.AppCompat.Headline5">
+    <style name="TextAppearance.Tugas13.HeadlineSmall" parent="TextAppearance.MaterialComponents.Headline5">
         <item name="android:textSize">24sp</item>
         <item name="android:letterSpacing">0</item>
     </style>
 
-    <style name="TextAppearance.Tugas13.TitleLarge" parent="TextAppearance.AppCompat.Title">
+    <style name="TextAppearance.Tugas13.TitleLarge" parent="TextAppearance.MaterialComponents.Headline6">
         <item name="android:textSize">22sp</item>
         <item name="android:letterSpacing">0</item>
     </style>
 
-    <style name="TextAppearance.Tugas13.TitleMedium" parent="TextAppearance.AppCompat.Subtitle">
+    <style name="TextAppearance.Tugas13.TitleMedium" parent="TextAppearance.MaterialComponents.Subtitle1">
         <item name="android:textSize">18sp</item>
         <item name="android:letterSpacing">0.15</item>
     </style>
 
-    <style name="TextAppearance.Tugas13.BodyLarge" parent="TextAppearance.AppCompat.Body1">
+    <style name="TextAppearance.Tugas13.BodyLarge" parent="TextAppearance.MaterialComponents.Body1">
         <item name="android:textSize">16sp</item>
         <item name="android:letterSpacing">0.5</item>
         <item name="android:lineSpacingExtra">4sp</item>
     </style>
 
-    <style name="TextAppearance.Tugas13.BodyMedium" parent="TextAppearance.AppCompat.Body2">
+    <style name="TextAppearance.Tugas13.BodyMedium" parent="TextAppearance.MaterialComponents.Body2">
         <item name="android:textSize">14sp</item>
         <item name="android:letterSpacing">0.25</item>
         <item name="android:lineSpacingExtra">2sp</item>
     </style>
 
-    <style name="TextAppearance.Tugas13.LabelLarge" parent="TextAppearance.AppCompat.Button">
+    <style name="TextAppearance.Tugas13.LabelLarge" parent="TextAppearance.MaterialComponents.Button">
         <item name="android:textSize">14sp</item>
         <item name="android:letterSpacing">0.1</item>
         <item name="android:fontFamily">sans-serif-medium</item>
     </style>
 
-    <style name="TextAppearance.Tugas13.Toolbar" parent="TextAppearance.AppCompat.Title">
+    <style name="TextAppearance.Tugas13.Toolbar" parent="TextAppearance.MaterialComponents.Headline6">
         <item name="android:textSize">20sp</item>
         <item name="android:letterSpacing">0</item>
     </style>
