@@ -1,0 +1,66 @@
+Schedule relaunch activity: com.unida.tugas13.SettingsActivity
+2026-07-04 09:49:55.231 28332-28332 ActivityThread          com.unida.tugas13                    I  Schedule relaunch activity: com.unida.tugas13.HomeActivity
+2026-07-04 09:49:55.261 28332-28332 WindowOnBackDispatcher  com.unida.tugas13                    W  sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda12@442fd5a
+2026-07-04 09:49:55.440 28332-28332 WindowOnBackDispatcher  com.unida.tugas13                    W  sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda12@a29fa11
+2026-07-04 09:49:55.626 28332-28332 Choreographer           com.unida.tugas13                    W  Already have a pending vsync event.  There should only be one at a time.
+2026-07-04 09:49:56.762 28332-28332 ActivityThread          com.unida.tugas13                    I  Schedule relaunch activity: com.unida.tugas13.HomeActivity
+2026-07-04 09:49:56.762 28332-28332 ActivityThread          com.unida.tugas13                    I  Schedule relaunch activity: com.unida.tugas13.SettingsActivity
+2026-07-04 09:49:56.780 28332-28332 WindowOnBackDispatcher  com.unida.tugas13                    W  sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda12@8209df3
+2026-07-04 09:49:57.040 28332-28332 Choreographer           com.unida.tugas13                    W  Already have a pending vsync event.  There should only be one at a time.
+2026-07-04 09:49:57.106 28332-28332 Choreographer           com.unida.tugas13                    W  Already have a pending vsync event.  There should only be one at a time.
+2026-07-04 09:49:59.809 28332-28332 ActivityThread          com.unida.tugas13                    I  Schedule relaunch activity: com.unida.tugas13.SettingsActivity
+2026-07-04 09:49:59.810 28332-28332 WindowOnBackDispatcher  com.unida.tugas13                    W  sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda12@3f6c689
+2026-07-04 09:49:59.840 28332-4094  m.unida.tugas13         com.unida.tugas13                    W  Cleared Reference was only reachable from finalizer (only reported once)
+2026-07-04 09:49:59.845 28332-4094  m.unida.tugas13         com.unida.tugas13                    W  userfaultfd: MOVE ioctl seems unsupported: Try again
+2026-07-04 09:50:01.907 28332-28332 ActivityThread          com.unida.tugas13                    I  Schedule relaunch activity: com.unida.tugas13.SettingsActivity
+2026-07-04 09:50:01.908 28332-28332 WindowOnBackDispatcher  com.unida.tugas13                    W  sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda12@1df3684
+2026-07-04 09:50:04.057 28332-28332 ActivityThread          com.unida.tugas13                    I  Schedule relaunch activity: com.unida.tugas13.SettingsActivity
+2026-07-04 09:50:04.058 28332-28332 WindowOnBackDispatcher  com.unida.tugas13                    W  sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda12@3b70a05
+2026-07-04 09:50:21.166 28332-28332 TextSelection           com.unida.tugas13                    D  onUseCache cache=false
+2026-07-04 09:50:21.263 28332-28332 VRI[SettingsActivity]   com.unida.tugas13                    D  hardware acceleration = true, forceHwAccelerated = false
+2026-07-04 09:50:21.263 28332-28332 ViewRootImpl            com.unida.tugas13                    D  setView appearance:8 com.unida.tugas13/com.unida.tugas13.SettingsActivity
+2026-07-04 09:50:21.273 28332-28332 InputEventReceiver      com.unida.tugas13                    D  Input log is disabled in InputEventReceiver.
+2026-07-04 09:50:21.298 28332-28332 BufferQueueConsumer     com.unida.tugas13                    D  [](id:6eac00000005,api:0,p:-1,c:28332) connect: controlledByApp=false
+2026-07-04 09:50:21.298 28332-28332 BLASTBufferQueue        com.unida.tugas13                    D  [VRI[SettingsActivity]#5](f:0,a:0) constructor()
+2026-07-04 09:50:21.298 28332-28332 BLASTBufferQueue        com.unida.tugas13                    D  [VRI[SettingsActivity]#5](f:0,a:0) update width=1098 height=626 format=-3 mTransformHint=0
+2026-07-04 09:50:21.310 28332-4116  BLASTBufferQueue        com.unida.tugas13                    D  [VRI[SettingsActivity]#5](f:0,a:1) acquireNextBufferLocked size=1098x626 mFrameNumber=1 applyTransaction=true mTimestamp=227733965319342(auto) mPendingTransactions.size=0 graphicBufferId=121685013430307 transform=0
+2026-07-04 09:50:23.254 28332-28332 TextSelection           com.unida.tugas13                    D  onUseCache cache=false
+2026-07-04 09:50:23.354 28332-28332 ActivityThread          com.unida.tugas13                    I  Schedule relaunch activity: com.unida.tugas13.SettingsActivity
+2026-07-04 09:50:23.355 28332-28332 WindowOnBackDispatcher  com.unida.tugas13                    W  sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda12@b1f9a08
+2026-07-04 09:50:23.362 28332-4116  HWUI                    com.unida.tugas13                    D  endAllActiveAnimators on 0xb4000073f0c56f40 (AlertController$RecycleListView) with handle 0xb4000074d0a95080
+2026-07-04 09:50:23.362 28332-28332 View                    com.unida.tugas13                    D  [Warning] assignParent to null: this = DecorView@9ef4802[SettingsActivity]
+2026-07-04 09:50:23.375 28332-4161  BLASTBufferQueue        com.unida.tugas13                    D  [VRI[SettingsActivity]#5](f:0,a:3) destructor()
+2026-07-04 09:50:23.375 28332-4161  BufferQueueConsumer     com.unida.tugas13                    D  [VRI[SettingsActivity]#5(BLAST Consumer)5](id:6eac00000005,api:0,p:-1,c:28332) disconnect
+2026-07-04 09:50:23.392 28332-28332 ActivityThread          com.unida.tugas13                    D  mToDestroying.remove:ActivityRecord{8293127 token=android.os.BinderProxy@e098b70 {com.unida.tugas13/com.unida.tugas13.SettingsActivity}}
+2026-07-04 09:50:23.395 28332-4264  libMEOW                 com.unida.tugas13                    D  meow new tls: 0xb4000075c104f640
+2026-07-04 09:50:23.396 28332-4264  libMEOW                 com.unida.tugas13                    D  applied 1 plugins for [com.unida.tugas13]:
+2026-07-04 09:50:23.396 28332-4264  libMEOW                 com.unida.tugas13                    D    plugin 1: [libMEOW_gift.so]: 0xb4000075a0a22030
+2026-07-04 09:50:23.396 28332-4264  libMEOW                 com.unida.tugas13                    D  rebuild call chain: 0xb4000075c108f680
+2026-07-04 09:50:23.396 28332-4264  libMEOW                 com.unida.tugas13                    D  meow delete tls: 0xb4000075c104f640
+2026-07-04 09:50:23.397 28332-28332 ActivityThread          com.unida.tugas13                    D  ++ activityComponent:com.unida.tugas13/com.unida.tugas13.SettingsActivity counts:1 ALEAK_CLEAR_SUPPORT:true
+2026-07-04 09:50:23.478 28332-28332 ActivityThread          com.unida.tugas13                    D  handleResumeActivity#3 r.window=nulla.mFinished = falsewillBeVisible = true
+2026-07-04 09:50:23.479 28332-28332 ActivityThread          com.unida.tugas13                    D  handleResumeActivity#4 addView a.mVisibleFromClient=truea.mWindowAdded=truedecor=DecorView@9248a4e[]
+2026-07-04 09:50:32.014 28332-28332 TextSelection           com.unida.tugas13                    D  onUseCache cache=false
+2026-07-04 09:50:32.107 28332-28332 VRI[SettingsActivity]   com.unida.tugas13                    D  hardware acceleration = true, forceHwAccelerated = false
+2026-07-04 09:50:32.107 28332-28332 ViewRootImpl            com.unida.tugas13                    D  setView appearance:8 com.unida.tugas13/com.unida.tugas13.SettingsActivity
+2026-07-04 09:50:32.116 28332-28332 InputEventReceiver      com.unida.tugas13                    D  Input log is disabled in InputEventReceiver.
+2026-07-04 09:50:32.135 28332-28332 BufferQueueConsumer     com.unida.tugas13                    D  [](id:6eac00000006,api:0,p:-1,c:28332) connect: controlledByApp=false
+2026-07-04 09:50:32.136 28332-28332 BLASTBufferQueue        com.unida.tugas13                    D  [VRI[SettingsActivity]#6](f:0,a:0) constructor()
+2026-07-04 09:50:32.136 28332-28332 BLASTBufferQueue        com.unida.tugas13                    D  [VRI[SettingsActivity]#6](f:0,a:0) update width=1098 height=626 format=-3 mTransformHint=0
+2026-07-04 09:50:32.148 28332-4116  BLASTBufferQueue        com.unida.tugas13                    D  [VRI[SettingsActivity]#6](f:0,a:1) acquireNextBufferLocked size=1098x626 mFrameNumber=1 applyTransaction=true mTimestamp=227744802799420(auto) mPendingTransactions.size=0 graphicBufferId=121685013430313 transform=0
+2026-07-04 09:50:32.869 28332-28332 TextSelection           com.unida.tugas13                    D  onUseCache cache=false
+2026-07-04 09:50:32.961 28332-28332 ActivityThread          com.unida.tugas13                    I  Schedule relaunch activity: com.unida.tugas13.SettingsActivity
+2026-07-04 09:50:32.961 28332-28332 WindowOnBackDispatcher  com.unida.tugas13                    W  sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda12@969ecdb
+2026-07-04 09:50:32.968 28332-4116  HWUI                    com.unida.tugas13                    D  endAllActiveAnimators on 0xb4000073f0c8c100 (AlertController$RecycleListView) with handle 0xb4000074d0a9ee00
+2026-07-04 09:50:32.968 28332-28332 View                    com.unida.tugas13                    D  [Warning] assignParent to null: this = DecorView@42690fd[SettingsActivity]
+2026-07-04 09:50:32.983 28332-4219  BLASTBufferQueue        com.unida.tugas13                    D  [VRI[SettingsActivity]#6](f:0,a:3) destructor()
+2026-07-04 09:50:32.983 28332-4219  BufferQueueConsumer     com.unida.tugas13                    D  [VRI[SettingsActivity]#6(BLAST Consumer)6](id:6eac00000006,api:0,p:-1,c:28332) disconnect
+2026-07-04 09:50:32.996 28332-28332 ActivityThread          com.unida.tugas13                    D  mToDestroying.remove:ActivityRecord{8293127 token=android.os.BinderProxy@e098b70 {com.unida.tugas13/com.unida.tugas13.SettingsActivity}}
+2026-07-04 09:50:33.001 28332-4267  libMEOW                 com.unida.tugas13                    D  meow new tls: 0xb4000075c114f740
+2026-07-04 09:50:33.001 28332-4267  libMEOW                 com.unida.tugas13                    D  applied 1 plugins for [com.unida.tugas13]:
+2026-07-04 09:50:33.001 28332-4267  libMEOW                 com.unida.tugas13                    D    plugin 1: [libMEOW_gift.so]: 0xb4000075a0a22030
+2026-07-04 09:50:33.001 28332-4267  libMEOW                 com.unida.tugas13                    D  rebuild call chain: 0xb4000075c115f750
+2026-07-04 09:50:33.001 28332-4267  libMEOW                 com.unida.tugas13                    D  meow delete tls: 0xb4000075c114f740
+2026-07-04 09:50:33.003 28332-28332 ActivityThread          com.unida.tugas13                    D  ++ activityComponent:com.unida.tugas13/com.unida.tugas13.SettingsActivity counts:1 ALEAK_CLEAR_SUPPORT:true
+2026-07-04 09:50:33.085 28332-28332 ActivityThread          com.unida.tugas13                    D  handleResumeActivity#3 r.window=nulla.mFinished = falsewillBeVisible = true
+2026-07-04 09:50:33.086 28332-28332 ActivityThread          com.unida.tugas13                    D  handleResumeActivity#4 addView a.mVisibleFromClient=truea.mWindowAdded=truedecor=DecorView@9248a4e[]

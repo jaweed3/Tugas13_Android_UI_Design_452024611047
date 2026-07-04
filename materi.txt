@@ -1,0 +1,206 @@
+{
+  "lesson": {
+    "title": "Lesson 13: App UI Design",
+    "overview": "This lesson covers Android styling, typography, Material Design, Material Components, localization, and example apps.",
+    "sections": [
+      {
+        "title": "About this lesson",
+        "topics": [
+          "Android styling",
+          "Typography",
+          "Material Design",
+          "Material Components",
+          "Localization",
+          "Example apps",
+          "Summary"
+        ]
+      },
+      {
+        "title": "Android Styling",
+        "subsections": [
+          {
+            "title": "Android Styling System",
+            "description": "Used to specify the visual design of your app. Helps you maintain a consistent look across your app. Hierarchical (you can inherit from parent styles and override specific attributes)."
+          },
+          {
+            "title": "Precedence of each method of styling",
+            "description": "Explains the precedence order of styling methods (likely from highest to lowest: view attributes, styles, themes)."
+          },
+          {
+            "title": "Themes",
+            "description": "Collection of named resources, useful broadly across the app. Named resources are known as theme attributes. Examples: Use a theme to define primary & secondary colors in the app, or to set the default font for all text within an activity.",
+            "declaration": "In res/values/themes.xml: <style name=\"Theme.MyApp\" parent=\"Theme.MaterialComponents.Light\"> <item name=\"colorPrimary\">@color/orange_500</item> <item name=\"colorPrimaryVariant\">@color/orange_700</item> <item name=\"colorSecondary\">@color/pink_200</item> <item name=\"colorSecondaryVariant\">@color/pink_700</item> </style>",
+            "application": "In AndroidManifest.xml: <activity android:theme=\"@style/Theme.MyApp\" ...>  In layout file: <ConstraintLayout ... android:theme=\"@style/Theme.MyApp\">",
+            "referencing": "In layout file: <LinearLayout ... android:background=\"?attr/colorSurface\"> Use ?attr/themeAttributeName syntax. Examples: ?attr/colorPrimary, ?attr/colorPrimaryVariant"
+          },
+          {
+            "title": "Styles",
+            "description": "A style is a collection of view attributes, specific to a type of view. Use a style to create a collection of reusable styling information, such as font size or colors. Good for declaring small sets of common designs used throughout your app.",
+            "declaration": "In res/values/styles.xml: <style name=\"DescriptionStyle\"> <item name=\"android:textColor\">#00FF00</item> <item name=\"android:textSize\">16sp</item> </style>",
+            "referencing_theme_attributes": "In res/values/styles.xml: <style name=\"DescriptionStyle\"> <item name=\"android:textColor\">?attr/colorOnSurface</item> <item name=\"android:textSize\">16sp</item> </style>"
+          },
+          {
+            "title": "View Attributes",
+            "description": "Use view attributes to set attributes explicitly for each view. You can use every property that can be set via styles or themes. Use for custom or one-off designs such as margins, paddings, or constraints."
+          },
+          {
+            "title": "Resources Directory",
+            "description": "Provides a way to organize and access resources."
+          },
+          {
+            "title": "Alternative Resources",
+            "description": "Provides a way to provide alternative resources for different configurations (e.g., locales, screen sizes)."
+          },
+          {
+            "title": "Colors",
+            "description": "A way to name and standardize colors throughout your app. In res/values/colors.xml: <color name=\"purple_200\">#FFBB86FC</color> ... Specified as hexadecimal colors in form of #AARRGGBB"
+          },
+          {
+            "title": "Dimension Resources",
+            "description": "A way to name and standardize dimension values in your layouts. Declare your dimension values in res/values/dimens.xml: <dimen name=\"top_margin\">16dp</dimen>. Refer to them as @dimen/<name> in layouts or R.dimen.<name> in code."
+          }
+        ]
+      },
+      {
+        "title": "Typography",
+        "subsections": [
+          {
+            "title": "Scale-independent pixels (sp)",
+            "description": "The textual equivalent to density-independent pixels (dp). Specify text sizes in sp (takes into account user preferences). Users can adjust Font and Display sizes in the Settings app."
+          },
+          {
+            "title": "Type Scale",
+            "description": "A set of styles designed to work together in a cohesive manner for your app and content. Contains reusable categories of text with intended purpose for each (for example, headline, subtitle, caption)."
+          },
+          {
+            "title": "TextAppearance",
+            "description": "A TextAppearance style often alters one or more of these attributes: typeface (android:fontFamily), weight (android:textStyle), text size (android:textSize), capitalization (android:textAllCaps), letter spacing (android:letterSpacing).",
+            "examples": "<TextView android:textAppearance=\"@style/TextAppearance.MaterialComponents.Headline1\" android:text=\"@string/title\" /> <TextView android:textAppearance=\"@style/TextAppearance.MaterialComponents.Body1\" android:text=\"@string/body_text\" />",
+            "customization": "<style name=\"TextAppearance.MyApp.Headline1\" parent=\"TextAppearance.MaterialComponents.Headline1\"> <item name=\"android:textStyle\">normal</item> <item name=\"android:textAllCaps\">false</item> <item name=\"android:textSize\">64sp</item> <item name=\"android:letterSpacing\">0</item> </style>",
+            "use_in_theme": "Can be used within a theme to customize the default text appearance."
+          }
+        ]
+      },
+      {
+        "title": "Material Design",
+        "description": "Adaptable system of guidelines, components, and tools that support best practices for UI design. Includes Material Design homepage."
+      },
+      {
+        "title": "Material Components",
+        "subsections": [
+          {
+            "title": "Overview",
+            "description": "Interactive building blocks for creating a user interface. Includes the Material color tool, baseline Material color theme, and the Material Components for Android Library."
+          },
+          {
+            "title": "Material Themes",
+            "themes": [
+              "Theme.MaterialComponents",
+              "Theme.MaterialComponents.NoActionBar",
+              "Theme.MaterialComponents.Light",
+              "Theme.MaterialComponents.Light.NoActionBar",
+              "Theme.MaterialComponents.Light.DarkActionBar",
+              "Theme.MaterialComponents.DayNight",
+              "Theme.MaterialComponents.DayNight.NoActionBar",
+              "Theme.MaterialComponents.DayNight.DarkActionBar"
+            ],
+            "example": "Theme.MaterialComponents.DayNight.DarkActionBar",
+            "dark_theme": {
+              "description": "A low-light UI that displays mostly dark surfaces. Replaces light-tinted surfaces and dark text with dark-tinted surfaces and light text. Makes it easier for anyone to use a device in lower-light environments. Improves visibility for users with low vision and those sensitive to bright light. Can significantly reduce power usage (depending on the device).",
+              "support": "In values/themes.xml: <style name=\"AppTheme\" parent=\"Theme.MaterialComponents.DayNight\"> <item name=\"colorPrimary\">@color/orange_500</item> In values-night/themes.xml: <style name=\"AppTheme\" parent=\"Theme.MaterialComponents.DayNight\"> <item name=\"colorPrimary\">@color/orange_200</item>"
+            }
+          },
+          {
+            "title": "Material Components Library",
+            "components": [
+              "Text fields",
+              "Buttons",
+              "Menus",
+              "Cards",
+              "Chips",
+              "App bars (top and bottom)",
+              "Floating Action Button (FAB)",
+              "Navigation Drawer",
+              "Bottom navigation",
+              "Snackbar"
+            ]
+          },
+          {
+            "title": "Text Field",
+            "description": "Composed of TextInputLayout with child view TextInputEditText. Shows a floating label or a text hint before the user enters text. Two types: Filled text field and Outlined text field.",
+            "example": "<com.google.android.material.textfield.TextInputLayout android:id=\"@+id/textField\" android:layout_width=\"match_parent\" android:layout_height=\"wrap_content\" android:hint=\"@string/label\" style=\"@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox\"> <com.google.android.material.textfield.TextInputEditText android:layout_width=\"match_parent\" android:layout_height=\"wrap_content\" /> </com.google.android.material.textfield.TextInputLayout>"
+          },
+          {
+            "title": "Bottom Navigation",
+            "description": "Allows movement between top level destinations in your app. Alternate design pattern to a navigation drawer. Limited to 5 locations max.",
+            "example": "Bottom navigation example (visual)",
+            "listener": "bottomNav.setOnNavigationItemSelectedListener { item -> when(item.itemId) { R.id.item1 -> { // Respond to navigation item 1 click true } R.id.item2 -> { true } else -> false } }"
+          },
+          {
+            "title": "Snackbar",
+            "description": "Display short messages within the app. Messages have a duration (SHORT, LONG, or INDEFINITE). May contain an optional action. Works best in a CoordinatorLayout. Shown at bottom of enclosing container.",
+            "examples": {
+              "simple": "Snackbar.make(view, R.string.text_label, Snackbar.LENGTH_SHORT) .show()",
+              "with_action": "Snackbar.make(view, R.string.text_label, Snackbar.LENGTH_LONG) .setAction(R.string.action_text) { // Responds to click on the action } .show()"
+            }
+          },
+          {
+            "title": "Floating Action Button (FAB)",
+            "description": "Perform the most-common action for a screen (for example, creating a new email). Come in multiple sizes (regular, mini, and extended).",
+            "example": "<androidx.coordinatorlayout.widget.CoordinatorLayout ...> <com.google.android.material.floatingactionbutton.FloatingActionButton android:id=\"@+id/floating_action_button\" android:layout_width=\"wrap_content\" android:layout_height=\"wrap_content\" android:layout_gravity=\"bottom|end\" android:layout_margin=\"16dp\" android:contentDescription=\"@string/fab_content_desc\" app:fabSize=\"normal\" <!-- or mini or auto --> app:srcCompat=\"@drawable/ic_plus\"/> </androidx.coordinatorlayout.widget.CoordinatorLayout>"
+          },
+          {
+            "title": "CoordinatorLayout",
+            "description": "Acts as top-level container in an app. Manages interaction of its child views, such as gestures. Recommended for use with views like a Snackbar or FAB."
+          },
+          {
+            "title": "MaterialCardView",
+            "description": "A card holds content and actions for a single item. Cards are often arranged in a list, grid, or dashboard. Use MaterialCardView.",
+            "example": "<com.google.android.material.card.MaterialCardView android:layout_width=\"match_parent\" android:layout_height=\"wrap_content\" android:layout_margin=\"8dp\"> <LinearLayout android:layout_width=\"match_parent\" android:layout_height=\"wrap_content\" android:orientation=\"vertical\"> <ImageView .../> <TextView .../> </LinearLayout> </com.google.android.material.card.MaterialCardView>"
+          }
+        ]
+      },
+      {
+        "title": "Localization",
+        "subsections": [
+          {
+            "title": "Overview",
+            "description": "Separate the localized aspects of your app (for example, text, audio files, currency, and numbers) as much as possible from the core Kotlin functionality of the app. Example: Extract the user-facing strings into strings.xml. When a user runs your app, the Android system selects which resources to load based on the device's locale. If locale-specific resources are not found, Android falls back to default resources you defined."
+          },
+          {
+            "title": "Support different languages and cultures",
+            "description": "Decide which locales to support. Create locale-specific directories in res directory: <resource type>-b+<language code>[+<country code>]. Examples: layout-b+en+US, values-b+es. Provide locale-specific resources (such as strings and drawables) in those directories."
+          },
+          {
+            "title": "Support languages that use RTL scripts",
+            "description": "Users can choose a language that uses right-to-left (RTL) scripts. Add android:supportsRtl=\"true\" to app tag in manifest. Convert left and right to start and end, respectively, in your layout files (change android:paddingLeft to android:paddingStart). Localize strings and format text in messages. Optionally, use -ldrtl resource qualifier to provide alternate resources."
+          }
+        ]
+      },
+      {
+        "title": "Example apps",
+        "description": "Check out other apps like the Google I/O app."
+      },
+      {
+        "title": "Summary",
+        "content": "In Lesson 13, you learned how to: Customize the visual look of your app using styles and themes. Choose from predefined type scales for the text in your app (or create your own text appearance). Select theme colors for your app using Material color tool. Use Material Components library to speed up UI development. Localize your app to support different languages and cultures."
+      },
+      {
+        "title": "Learn more",
+        "resources": [
+          "Material Design",
+          "Material Components",
+          "Tools for picking colors",
+          "Dark theme",
+          "Localize your app",
+          "Blog posts: Themes vs Styles, Common Theme Attributes, Prefer Theme Attributes, Themes Overlay",
+          "Sample code: Sunflower app, Google I/O app, Android GitHub repo"
+        ]
+      },
+      {
+        "title": "Practice",
+        "description": "Practice what you've learned by completing the pathway: Lesson 13: App UI Design."
+      }
+    ]
+  }
+}

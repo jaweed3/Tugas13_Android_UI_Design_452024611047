@@ -1,9 +1,10 @@
 package com.unida.tugas13
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.os.LocaleListCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.snackbar.Snackbar
@@ -12,10 +13,6 @@ import com.unida.tugas13.databinding.ActivityHomeBinding
 class HomeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomeBinding
-
-    override fun attachBaseContext(newBase: Context) {
-        super.attachBaseContext(LocaleHelper.onAttach(newBase))
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -119,11 +116,16 @@ class HomeActivity : AppCompatActivity() {
         val languages = arrayOf("English", "Bahasa Indonesia")
         val languageCodes = arrayOf("en", "id")
 
+        val currentLocale = AppCompatDelegate.getApplicationLocales()
+        val currentLang = if (!currentLocale.isEmpty) currentLocale[0]!!.language else "en"
+        val selectedIndex = if (currentLang == "id") 1 else 0
+
         androidx.appcompat.app.AlertDialog.Builder(this)
             .setTitle(R.string.language_setting)
-            .setItems(languages) { _, which ->
-                LocaleHelper.setLocale(this, languageCodes[which])
-                recreate()
+            .setSingleChoiceItems(languages, selectedIndex) { dialog, which ->
+                val appLocale = LocaleListCompat.forLanguageTags(languageCodes[which])
+                AppCompatDelegate.setApplicationLocales(appLocale)
+                dialog.dismiss()
             }
             .show()
     }
