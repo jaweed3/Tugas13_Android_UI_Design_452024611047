@@ -1,20 +1,23 @@
 package com.unida.tugas13
 
 import android.content.Intent
+import android.content.res.Configuration
 import android.os.Bundle
+import android.os.LocaleList
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
-import androidx.core.os.LocaleListCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.snackbar.Snackbar
 import com.unida.tugas13.databinding.ActivitySettingsBinding
+import java.util.Locale
 
 class SettingsActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySettingsBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        applySavedLocale()
         super.onCreate(savedInstanceState)
         binding = ActivitySettingsBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -26,6 +29,16 @@ class SettingsActivity : AppCompatActivity() {
         setupLanguageSelector()
         setupCards()
         setupLogout()
+    }
+
+    private fun applySavedLocale() {
+        val prefs = getSharedPreferences("locale_prefs", MODE_PRIVATE)
+        val lang = prefs.getString("lang", "en") ?: "en"
+        val locale = Locale(lang)
+        Locale.setDefault(locale)
+        val config = Configuration()
+        config.setLocales(LocaleList(locale))
+        applyOverrideConfiguration(config)
     }
 
     private fun setupWindowInsets() {
@@ -104,29 +117,25 @@ class SettingsActivity : AppCompatActivity() {
     }
 
     private fun updateLanguageUI() {
-        val currentLocale = AppCompatDelegate.getApplicationLocales()
-        val langCode = if (!currentLocale.isEmpty) currentLocale[0]!!.language else "en"
-        binding.tvLanguageValue.text = if (langCode == "id") {
-            "Bahasa Indonesia"
-        } else {
-            "English"
-        }
+        val prefs = getSharedPreferences("locale_prefs", MODE_PRIVATE)
+        val lang = prefs.getString("lang", "en") ?: "en"
+        binding.tvLanguageValue.text = if (lang == "id") "Bahasa Indonesia" else "English"
     }
 
     private fun showLanguageDialog() {
         val languages = arrayOf("English", "Bahasa Indonesia")
         val languageCodes = arrayOf("en", "id")
 
-        val currentLocale = AppCompatDelegate.getApplicationLocales()
-        val currentLang = if (!currentLocale.isEmpty) currentLocale[0]!!.language else "en"
+        val prefs = getSharedPreferences("locale_prefs", MODE_PRIVATE)
+        val currentLang = prefs.getString("lang", "en") ?: "en"
         val selectedIndex = if (currentLang == "id") 1 else 0
 
         androidx.appcompat.app.AlertDialog.Builder(this)
             .setTitle(R.string.language_setting)
             .setSingleChoiceItems(languages, selectedIndex) { dialog, which ->
-                val appLocale = LocaleListCompat.forLanguageTags(languageCodes[which])
-                AppCompatDelegate.setApplicationLocales(appLocale)
+                prefs.edit().putString("lang", languageCodes[which]).commit()
                 dialog.dismiss()
+                recreate()
             }
             .show()
     }
