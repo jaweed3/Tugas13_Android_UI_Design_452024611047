@@ -125,7 +125,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="85%"
+                        android:text="@string/velocity_percent"
                         android:textAppearance="@style/TextAppearance.TaskFlow.DisplayLG"
                         android:textColor="?attr/colorOnSurface" />
 

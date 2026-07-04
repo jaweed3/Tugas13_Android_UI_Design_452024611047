@@ -12,6 +12,7 @@
     <string name="welcome_message">Anda memiliki <b>%d tugas</b> tersisa hari ini.</string>
     <string name="btn_view_report">Lihat Laporan</string>
     <string name="weekly_velocity">Kecepatan Mingguan</string>
+    <string name="velocity_percent">85%</string>
     <string name="active_tasks">Tugas Aktif</string>
     <string name="sort_by_date">Urutkan Berdasarkan Tanggal</string>
     <string name="due_today">Tenggat: Hari Ini</string>

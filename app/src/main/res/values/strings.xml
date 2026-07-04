@@ -12,6 +12,7 @@
     <string name="welcome_message">You have <b>%d tasks</b> left for today.</string>
     <string name="btn_view_report">View Report</string>
     <string name="weekly_velocity">Weekly Velocity</string>
+    <string name="velocity_percent">85%</string>
     <string name="active_tasks">Active Tasks</string>
     <string name="sort_by_date">Sort By Date</string>
     <string name="due_today">Due: Today</string>
