@@ -1,44 +1,19 @@
 package com.unida.tugas13
 
-import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
-import android.content.res.Configuration
-import android.os.Build
 import android.os.Bundle
-import android.os.LocaleList
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.snackbar.Snackbar
 import com.unida.tugas13.databinding.ActivityHomeBinding
-import java.util.Locale
 
 class HomeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomeBinding
-    private lateinit var prefs: SharedPreferences
-
-    override fun attachBaseContext(newBase: Context) {
-        val p = newBase.getSharedPreferences("locale_prefs", MODE_PRIVATE)
-        val lang = p.getString("lang", "en") ?: "en"
-        val locale = Locale(lang)
-        Locale.setDefault(locale)
-        val config = Configuration(newBase.resources.configuration)
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            config.setLocales(LocaleList(locale))
-        } else {
-            @Suppress("DEPRECATION")
-            config.locale = locale
-        }
-        @Suppress("DEPRECATION")
-        newBase.resources.updateConfiguration(config, newBase.resources.displayMetrics)
-        super.attachBaseContext(newBase)
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        prefs = applicationContext.getSharedPreferences("locale_prefs", MODE_PRIVATE)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -62,7 +37,7 @@ class HomeActivity : AppCompatActivity() {
         binding.toolbar.setOnMenuItemClickListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.action_language -> {
-                    showLanguageDialog()
+                    Snackbar.make(binding.coordinatorLayout, R.string.language_setting, Snackbar.LENGTH_SHORT).show()
                     true
                 }
                 else -> false
@@ -133,22 +108,5 @@ class HomeActivity : AppCompatActivity() {
                 .setAction(R.string.btn_save) {}
                 .show()
         }
-    }
-
-    private fun showLanguageDialog() {
-        val languages = arrayOf("English", "Bahasa Indonesia")
-        val languageCodes = arrayOf("en", "id")
-
-        val currentLang = prefs.getString("lang", "en") ?: "en"
-        val selectedIndex = if (currentLang == "id") 1 else 0
-
-        androidx.appcompat.app.AlertDialog.Builder(this)
-            .setTitle(R.string.language_setting)
-            .setSingleChoiceItems(languages, selectedIndex) { dialog, which ->
-                prefs.edit().putString("lang", languageCodes[which]).commit()
-                dialog.dismiss()
-                recreate()
-            }
-            .show()
     }
 }
