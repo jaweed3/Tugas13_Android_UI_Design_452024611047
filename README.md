@@ -54,7 +54,7 @@
 |-------|-------------|
 | **Dark Theme** | `res/values-night/themes.xml` + `values-night/colors.xml` dengan palet dark blue tones |
 | **Typography (Type Scale)** | `res/values/typography.xml` — 9 custom TextAppearance styles dengan parent `TextAppearance.Material3.*`, semua dalam satuan `sp` |
-| **Localization (ID)** | `res/values-b+id/strings.xml` — 65+ string diterjemahkan ke Bahasa Indonesia |
+| **Localization (ID)** | `res/values-in/strings.xml` — 65+ string diterjemahkan ke Bahasa Indonesia |
 | **RTL Support** | `android:supportsRtl="true"` di manifest, semua layout menggunakan `start`/`end` |
 | **ViewBinding** | Semua activity menggunakan ViewBinding untuk type-safe view access |
 | **Fade Transitions** | Transisi halus antara Home ↔ Settings |
