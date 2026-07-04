@@ -1,7 +1,7 @@
 package com.unida.tugas13
 
-import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.content.res.Configuration
 import android.os.Bundle
 import android.os.LocaleList
@@ -15,10 +15,17 @@ import java.util.Locale
 class HomeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomeBinding
+    private lateinit var prefs: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        // Apply locale before super.onCreate — this is the key fix
-        applySavedLocale()
+        prefs = applicationContext.getSharedPreferences("locale_prefs", MODE_PRIVATE)
+        val lang = prefs.getString("lang", "en") ?: "en"
+        val locale = Locale(lang)
+        Locale.setDefault(locale)
+        val config = Configuration()
+        config.setLocales(LocaleList(locale))
+        applyOverrideConfiguration(config)
+
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -29,16 +36,6 @@ class HomeActivity : AppCompatActivity() {
         setupWelcomeCard()
         setupTaskCheckboxes()
         setupFab()
-    }
-
-    private fun applySavedLocale() {
-        val prefs = getSharedPreferences("locale_prefs", MODE_PRIVATE)
-        val lang = prefs.getString("lang", "en") ?: "en"
-        val locale = Locale(lang)
-        Locale.setDefault(locale)
-        val config = Configuration()
-        config.setLocales(LocaleList(locale))
-        applyOverrideConfiguration(config)
     }
 
     private fun setupWindowInsets() {
@@ -130,7 +127,6 @@ class HomeActivity : AppCompatActivity() {
         val languages = arrayOf("English", "Bahasa Indonesia")
         val languageCodes = arrayOf("en", "id")
 
-        val prefs = getSharedPreferences("locale_prefs", MODE_PRIVATE)
         val currentLang = prefs.getString("lang", "en") ?: "en"
         val selectedIndex = if (currentLang == "id") 1 else 0
 

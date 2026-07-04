@@ -1,6 +1,7 @@
 package com.unida.tugas13
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.content.res.Configuration
 import android.os.Bundle
 import android.os.LocaleList
@@ -15,9 +16,17 @@ import java.util.Locale
 class SettingsActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySettingsBinding
+    private lateinit var prefs: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        applySavedLocale()
+        prefs = applicationContext.getSharedPreferences("locale_prefs", MODE_PRIVATE)
+        val lang = prefs.getString("lang", "en") ?: "en"
+        val locale = Locale(lang)
+        Locale.setDefault(locale)
+        val config = Configuration()
+        config.setLocales(LocaleList(locale))
+        applyOverrideConfiguration(config)
+
         super.onCreate(savedInstanceState)
         binding = ActivitySettingsBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -29,16 +38,6 @@ class SettingsActivity : AppCompatActivity() {
         setupLanguageSelector()
         setupCards()
         setupLogout()
-    }
-
-    private fun applySavedLocale() {
-        val prefs = getSharedPreferences("locale_prefs", MODE_PRIVATE)
-        val lang = prefs.getString("lang", "en") ?: "en"
-        val locale = Locale(lang)
-        Locale.setDefault(locale)
-        val config = Configuration()
-        config.setLocales(LocaleList(locale))
-        applyOverrideConfiguration(config)
     }
 
     private fun setupWindowInsets() {
@@ -117,7 +116,6 @@ class SettingsActivity : AppCompatActivity() {
     }
 
     private fun updateLanguageUI() {
-        val prefs = getSharedPreferences("locale_prefs", MODE_PRIVATE)
         val lang = prefs.getString("lang", "en") ?: "en"
         binding.tvLanguageValue.text = if (lang == "id") "Bahasa Indonesia" else "English"
     }
@@ -126,7 +124,6 @@ class SettingsActivity : AppCompatActivity() {
         val languages = arrayOf("English", "Bahasa Indonesia")
         val languageCodes = arrayOf("en", "id")
 
-        val prefs = getSharedPreferences("locale_prefs", MODE_PRIVATE)
         val currentLang = prefs.getString("lang", "en") ?: "en"
         val selectedIndex = if (currentLang == "id") 1 else 0
 
