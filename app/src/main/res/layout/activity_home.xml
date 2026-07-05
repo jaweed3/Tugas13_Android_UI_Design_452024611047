@@ -395,12 +395,13 @@
                             android:textColor="?attr/colorOnSurface" />
 
                         <TextView
+                            android:id="@+id/tvTask4Detail"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textAppearance="@style/TextAppearance.TaskFlow.LabelSM"
                             android:textColor="?attr/colorPrimary"
                             android:layout_marginTop="2dp"
-                            tools:text="4 participants • 14:00 PM" />
+                            tools:text="4 participants • 14:00" />
 
                     </LinearLayout>
 

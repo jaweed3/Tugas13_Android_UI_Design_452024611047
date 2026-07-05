@@ -13,26 +13,33 @@
 
 ## Bukti Visual
 
-### 1. Light Mode vs Dark Mode
+### 1. Light Mode vs Dark Mode (Home)
 
 | Light Mode | Dark Mode |
 |------------|-----------|
-| *(screenshot light mode)* | *(screenshot dark mode)* |
+| ![English Light Home](ss_eng_light_home.jpg) | ![English Dark Home](ss_eng_home.jpg) |
 
-### 2. Localization (Bahasa Indonesia)
+### 2. Localization (Bahasa Indonesia) — Light Mode
 
 | English (Default) | Bahasa Indonesia |
 |-------------------|------------------|
-| *(screenshot EN)* | *(screenshot BI — setelah ganti bahasa HP ke Indonesia, lalu force stop & buka lagi)* |
+| ![English Home](ss_eng_light_home.jpg) | ![Indonesian Home](ss_indo_home_light.jpg) |
+| ![English Settings](ss_eng_light_setting.jpg) | ![Indonesian Settings](ss_indo_setting_light.jpg) |
 
-### 3. Komponen Material Design
+### 3. Localization — Dark Mode
 
-*Screenshot/GIF yang menunjukkan:*
+| English | Bahasa Indonesia |
+|---------|------------------|
+| ![English Dark Home](ss_eng_home.jpg) | ![Indonesian Dark Home](ss_indo_home.jpg) |
+
+### 4. Komponen Material Design
+
+Semua komponen Material Design terlihat di screenshot di atas:
 - **MaterialCardView** — Welcome hero card, task list cards, velocity card
 - **FloatingActionButton (FAB) di CoordinatorLayout** — Add Task FAB
 - **BottomNavigationView** — Navigasi antara Tasks dan Settings
-- **Snackbar** — Feedback untuk setiap aksi pengguna
-- **TextInputLayout (OutlinedBox)** — Field input pada Settings
+- **MaterialSwitch** — Theme toggle di Settings
+- **Snackbar** — Feedback untuk setiap aksi pengguna (dijalankan via kode)
 
 ---
 
@@ -54,7 +61,9 @@
 |-------|-------------|
 | **Dark Theme** | `res/values-night/themes.xml` + `values-night/colors.xml` dengan palet dark blue tones |
 | **Typography (Type Scale)** | `res/values/typography.xml` — 9 custom TextAppearance styles dengan parent `TextAppearance.Material3.*`, semua dalam satuan `sp` |
-| **Localization (ID)** | `res/values-in/strings.xml` — 65+ string diterjemahkan ke Bahasa Indonesia |
+| **Localization (ID)** | `res/values-b+id/strings.xml` (Android 15+) + `res/values-in/strings.xml` (pre-Android 15) — dual folder biar kompatibel semua versi Android |
+| **Locale Config** | `res/xml/locales_config.xml` — declared di manifest via `android:localeConfig` untuk Android 13+ |
+| **Language Split** | `bundle { language { enableSplit = false } }` di `build.gradle.kts` — mencegah stripping bahasa di App Bundle |
 | **RTL Support** | `android:supportsRtl="true"` di manifest, semua layout menggunakan `start`/`end` |
 | **ViewBinding** | Semua activity menggunakan ViewBinding untuk type-safe view access |
 | **Fade Transitions** | Transisi halus antara Home ↔ Settings |

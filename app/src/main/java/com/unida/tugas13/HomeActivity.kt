@@ -71,6 +71,8 @@ class HomeActivity : AppCompatActivity() {
         val taskCount = 4
         binding.tvWelcomeMessage.text = getString(R.string.welcome_message, taskCount)
 
+        binding.tvTask4Detail.text = "${getString(R.string.participants, 4)} • 14:00"
+
         binding.btnViewReport.setOnClickListener {
             Snackbar.make(binding.coordinatorLayout, R.string.btn_view_report, Snackbar.LENGTH_LONG).show()
         }
